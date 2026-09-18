@@ -1,0 +1,63 @@
+{
+  "source": "operator phone timing and observations in conversation; CNN raw logs not collected here",
+  "battery_conditions": "OpenCV five runs on same battery; operator reported replacing battery before CNN; subsequent changes not reported",
+  "trial_classification": "CNN first run was announced as recovery validation; operator subsequently designated it trial 1; retained with this note",
+  "cnn_runs": [
+    {
+      "trial": 1,
+      "phone_lap_time_s": 16.23,
+      "completed": true,
+      "line_contacts": 1,
+      "departures": 0,
+      "interventions": 0
+    },
+    {
+      "trial": 2,
+      "phone_lap_time_s": 16.64,
+      "completed": true,
+      "line_contacts": 2,
+      "departures": 0,
+      "interventions": 0
+    },
+    {
+      "trial": 3,
+      "phone_lap_time_s": 16.2,
+      "completed": true,
+      "line_contacts": 3,
+      "departures": 0,
+      "interventions": 0
+    },
+    {
+      "trial": 4,
+      "phone_lap_time_s": 18.0,
+      "completed": true,
+      "line_contacts": 2,
+      "departures": 0,
+      "interventions": 0
+    },
+    {
+      "trial": 5,
+      "phone_lap_time_s": 18.23,
+      "completed": true,
+      "line_contacts": 1,
+      "departures": 0,
+      "interventions": 0
+    }
+  ],
+  "opencv_phone_times_s": [
+    11.24,
+    11.91,
+    13.3,
+    13.63,
+    13.6
+  ],
+  "opencv_mean_s": 12.736,
+  "cnn_mean_s": 17.06,
+  "cnn_mean_contacts": 1.8,
+  "limitations": [
+    "Manual timing",
+    "Sequential OpenCV then CNN, different batteries",
+    "No algorithm-only speed attribution",
+    "Reported failed CNN HTTP-control check excluded from these completed runs; not a claim of all-attempt success rate"
+  ]
+}

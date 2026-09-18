@@ -1,0 +1,22 @@
+{
+  "trial_id": "OpenCV_01R1",
+  "date": "2026-09-12",
+  "source": "user report and pasted summary",
+  "completed_laps": 1,
+  "line_touches": 0,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "remote_directory": "/home/student/projects/mycar/pixel_evaluation_20260912/opencv_runs/20260912_083241_823654",
+  "summary_reported": {
+    "frames": 257,
+    "stop_reason": "exit",
+    "hardware_pwm": true,
+    "error": "KeyboardInterrupt: ",
+    "watchdog_error": null,
+    "ready_frames": 257,
+    "fresh_frames": 257
+  },
+  "download_verified": false,
+  "battery_id": null,
+  "notes": "Additional run requested by user; original OpenCV_01 retained. Same battery as CNN_01R1 requested but not explicitly confirmed. KeyboardInterrupt is operator termination."
+}

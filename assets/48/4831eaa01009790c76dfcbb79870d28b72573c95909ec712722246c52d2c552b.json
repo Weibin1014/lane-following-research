@@ -1,0 +1,68 @@
+[
+  {
+    "trial": "CNN_03",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/CNN_RUN_20260912_082503_192901",
+    "records": 236,
+    "images": 236,
+    "record_span_s": 11.746,
+    "line_touches": 2,
+    "out_of_bounds": 1,
+    "interventions": 0,
+    "valid": true
+  },
+  {
+    "trial": "CNN_01R1",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/CNN_RUN_20260912_083059_817688",
+    "records": 249,
+    "images": 249,
+    "record_span_s": 12.402,
+    "line_touches": 3,
+    "out_of_bounds": 1,
+    "interventions": 0,
+    "valid": true
+  },
+  {
+    "trial": "CNN_02R1",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/CNN_RUN_20260912_083630_427620",
+    "records": 248,
+    "images": 248,
+    "record_span_s": 12.345,
+    "line_touches": 2,
+    "out_of_bounds": 0,
+    "interventions": 0,
+    "valid": true
+  },
+  {
+    "trial": "OpenCV_02",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/opencv_runs/20260912_082301_535034",
+    "records": 249,
+    "images": 84,
+    "record_span_s": 11.732,
+    "line_touches": 0,
+    "out_of_bounds": 0,
+    "interventions": 0,
+    "valid": true
+  },
+  {
+    "trial": "OpenCV_03",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/opencv_runs/20260912_082750_454344",
+    "records": 257,
+    "images": 87,
+    "record_span_s": 12.109,
+    "line_touches": 0,
+    "out_of_bounds": 0,
+    "interventions": 0,
+    "valid": true
+  },
+  {
+    "trial": "OpenCV_01R1",
+    "directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/pixel_evaluation_20260912/opencv_runs/20260912_083241_823654",
+    "records": 257,
+    "images": 86,
+    "record_span_s": 12.109,
+    "line_touches": 0,
+    "out_of_bounds": 0,
+    "interventions": 0,
+    "valid": true
+  }
+]

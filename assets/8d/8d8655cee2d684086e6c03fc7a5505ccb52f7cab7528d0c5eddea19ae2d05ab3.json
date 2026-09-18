@@ -1,0 +1,28 @@
+{
+  "trial_id": "OpenCV_01",
+  "date": "2026-09-12",
+  "source": "user report and pasted summary",
+  "completed_laps": 1,
+  "line_touches": 0,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "remote_directory": "/home/student/projects/mycar/pixel_evaluation_20260912/opencv_runs/20260912_081536_739891",
+  "summary_reported": {
+    "frames": 558,
+    "stop_reason": "exit",
+    "hardware_pwm": true,
+    "error": "KeyboardInterrupt: ",
+    "watchdog_error": null,
+    "ready_frames": 558,
+    "fresh_frames": 558
+  },
+  "download_verified": true,
+  "battery_id": null,
+  "voltage": null,
+  "notes": "Operator reports one complete lap and zero other events. KeyboardInterrupt retained as operator termination; not treated as independent runtime failure.",
+  "local_directory": "/Users/zhangweibin/Documents/Thesis/experiment_data/2026-09-12/20260912_081536_739891",
+  "saved_raw_images": 187,
+  "saved_debug_images": 187,
+  "first_saved_frame": 1,
+  "last_saved_frame": 558
+}

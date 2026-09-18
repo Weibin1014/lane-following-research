@@ -1,0 +1,509 @@
+{
+  "archive_sha256": "11b6774b0a17bd82e90019af4be11836347a6244a2d7b1edd498291b82686abe",
+  "archive_file_count": 4724,
+  "cnn_records": [
+    {
+      "path": "comparison_results/CNN_01_20260909_102449/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "lap_time_s": null,
+        "left_line_contacts": 3,
+        "departures": 0,
+        "interventions": 0,
+        "start_time": "2026-09-09T10:24:54.527482",
+        "status": "operator_stop_requested",
+        "command_duration_s": 18.142,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "comparison_results/CNN_02_20260909_103109/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 2,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 2,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "start_time": "2026-09-09T10:31:14.111773",
+        "status": "operator_stop_requested",
+        "command_duration_s": 16.618,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104648/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:46:58.936948",
+        "status": "operator_stop_requested",
+        "command_duration_s": 9.369,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104740/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:47:44.513770",
+        "status": "operator_stop_requested",
+        "command_duration_s": 16.481,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104850/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:48:54.485363",
+        "status": "operator_stop_requested",
+        "command_duration_s": 15.534,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105100/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:51:04.179329",
+        "status": "operator_stop_requested",
+        "command_duration_s": 18.12,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105127/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:51:31.075130",
+        "status": "operator_stop_requested",
+        "command_duration_s": 8.131,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105207/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:52:11.971751",
+        "status": "operator_stop_requested",
+        "command_duration_s": 15.208,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105415/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:54:20.451022",
+        "status": "operator_stop_requested",
+        "command_duration_s": 27.527,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105504/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:55:10.430990",
+        "status": "operator_stop_requested",
+        "command_duration_s": 15.23,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105544/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": "3R1",
+        "repeat_of": 3,
+        "repeat_reason": "Operator reported I/O connector disconnection during trial 3",
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 4,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T10:55:48.711720",
+        "status": "operator_stop_requested",
+        "command_duration_s": 15.453,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104049/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 3,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": false,
+        "line_contacts": 4,
+        "departures": 1,
+        "interventions": 1,
+        "lap_time_s": null,
+        "battery_note": "",
+        "start_time": "2026-09-09T10:41:31.053391",
+        "status": "operator_stop_requested",
+        "command_duration_s": 38.991,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104314/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 3,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "",
+        "start_time": "2026-09-09T10:43:23.117629",
+        "status": "operator_stop_requested",
+        "command_duration_s": 25.293,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104425/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 3,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "",
+        "start_time": "2026-09-09T10:44:30.064381",
+        "status": "operator_stop_requested",
+        "command_duration_s": 37.819,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104525/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 3,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "",
+        "start_time": "2026-09-09T10:45:32.033730",
+        "status": "operator_stop_requested",
+        "command_duration_s": 8.719,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_04_20260909_110027/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 4,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T11:00:33.126335",
+        "status": "operator_stop_requested",
+        "command_duration_s": 8.747,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_04_20260909_110106/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 4,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 3,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T11:01:12.199873",
+        "status": "operator_stop_requested",
+        "command_duration_s": 14.831,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "comparison_results/CNN_05_20260909_110457/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 5,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": null,
+        "line_contacts": null,
+        "departures": null,
+        "interventions": null,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T11:05:01.820146",
+        "status": "operator_stop_requested",
+        "command_duration_s": 8.241,
+        "stop_request_sent": true
+      }
+    },
+    {
+      "path": "comparison_results/CNN_05_20260909_110537/summary.json",
+      "record": {
+        "method": "CNN steering, fixed throttle",
+        "trial": 5,
+        "model": "models/mypilot.tflite",
+        "mode": "local_angle",
+        "throttle": 0.375,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 3,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "start_time": "2026-09-09T11:05:42.785670",
+        "status": "operator_stop_requested",
+        "command_duration_s": 15.617,
+        "stop_request_sent": true,
+        "observation_source": "operator report"
+      }
+    }
+  ],
+  "opencv_observations": [
+    {
+      "path": "continuous_local_16s_results/20260909_102814_724759/operator_observation.json",
+      "record": {
+        "method": "OpenCV",
+        "trial": 1,
+        "completed_lap": true,
+        "line_contacts": 0,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "end_reason": "operator Ctrl+C after completing one lap",
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "continuous_local_16s_results/20260909_103843_738108/operator_observation_trial02.json",
+      "record": {
+        "method": "OpenCV",
+        "trial": 2,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 0,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "end_note": "operator Ctrl+C after completing one lap",
+        "observation_source": "operator report",
+        "battery_condition": "not measured"
+      }
+    },
+    {
+      "path": "continuous_local_16s_results/20260909_105712_827635/operator_observation_trial03.json",
+      "record": {
+        "method": "OpenCV",
+        "trial": 3,
+        "paired_cnn_trial": "3R1",
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 0,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "end_note": "operator Ctrl+C after completing one lap",
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "continuous_local_16s_results/20260909_110233_666700/operator_observation_trial04.json",
+      "record": {
+        "method": "OpenCV",
+        "trial": 4,
+        "paired_cnn_trial": 4,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 0,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "end_note": "operator Ctrl+C after completing one lap",
+        "observation_source": "operator report"
+      }
+    },
+    {
+      "path": "continuous_local_16s_results/20260909_110703_777226/operator_observation_trial05.json",
+      "record": {
+        "method": "OpenCV",
+        "trial": 5,
+        "paired_cnn_trial": 5,
+        "expected_pwm": 400,
+        "completed_lap": true,
+        "line_contacts": 0,
+        "departures": 0,
+        "interventions": 0,
+        "lap_time_s": null,
+        "battery_note": "unknown",
+        "end_note": "operator Ctrl+C after completing one lap",
+        "observation_source": "operator report"
+      }
+    }
+  ]
+}

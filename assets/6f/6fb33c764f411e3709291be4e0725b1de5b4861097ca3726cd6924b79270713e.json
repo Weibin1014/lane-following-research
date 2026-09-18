@@ -1,0 +1,8 @@
+{
+  "roi_top_ratio": 0.55,
+  "lane_side": "right",
+  "bottom_ratio": 0.45,
+  "fallback_lane_width_ratio": 0.42,
+  "target_offset_px": 0,
+  "steering_gain": 0.8
+}

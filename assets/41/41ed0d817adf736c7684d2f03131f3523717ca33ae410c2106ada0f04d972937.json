@@ -1,0 +1,20 @@
+{
+  "trial_id": "CNN_02R1",
+  "date": "2026-09-12",
+  "source": "user report and pasted console output",
+  "completed_laps": 1,
+  "line_touches": 2,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "battery_group": "new_battery",
+  "image_directory_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/CNN_RUN_20260912_083630_427620",
+  "control_log_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/cnn_control_logs/20260912_083648_083605",
+  "command_interval_s": 12.451,
+  "phone_lap_time_s": null,
+  "stop_reason": "operator_stop",
+  "stop_request_acknowledged": true,
+  "console_record_count_lower_bound": 240,
+  "camera_and_tub_closed": true,
+  "download_verified": false,
+  "notes": "New battery supplementary trial; original CNN_02 retained. User reports one lap, two line touches, zero other events. Raw image verification pending."
+}

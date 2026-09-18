@@ -1,0 +1,14 @@
+{
+  "drive": true,
+  "duration": 2,
+  "watchdog_seconds": 0.25,
+  "fresh_limit_seconds": 0.2,
+  "throttle": 400,
+  "stop": 370,
+  "servo_center": 350,
+  "servo_range": [
+    330,
+    390
+  ],
+  "initial_ready_frames": 5
+}

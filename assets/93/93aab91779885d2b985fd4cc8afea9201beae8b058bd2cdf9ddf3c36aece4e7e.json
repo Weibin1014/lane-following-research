@@ -1,0 +1,82 @@
+{
+  "rows": [
+    {
+      "group": 1,
+      "cnn_trial": 1,
+      "cnn_lap_time_s": 18.142,
+      "cnn_timing_method": "program timing, operator ended one lap; operator confirmed",
+      "cnn_line_contacts": 3,
+      "opencv_logged_forward_span_s": 15.550429570999768,
+      "opencv_lap_time_s": null,
+      "opencv_line_contacts": 0,
+      "both_completed": true,
+      "both_departures": 0,
+      "both_interventions": 0,
+      "cnn_source": "comparison_results/CNN_01_20260909_102449/summary.json",
+      "opencv_source": "continuous_local_16s_results/20260909_102814_724759/frames.csv"
+    },
+    {
+      "group": 2,
+      "cnn_trial": 2,
+      "cnn_lap_time_s": 16.618,
+      "cnn_timing_method": "program timing, operator ended one lap; operator confirmed",
+      "cnn_line_contacts": 2,
+      "opencv_logged_forward_span_s": 12.90901134699925,
+      "opencv_lap_time_s": null,
+      "opencv_line_contacts": 0,
+      "both_completed": true,
+      "both_departures": 0,
+      "both_interventions": 0,
+      "cnn_source": "comparison_results/CNN_02_20260909_103109/summary.json",
+      "opencv_source": "continuous_local_16s_results/20260909_103843_738108/frames.csv"
+    },
+    {
+      "group": 3,
+      "cnn_trial": "3R1",
+      "cnn_lap_time_s": 15.453,
+      "cnn_timing_method": "program timing, operator ended one lap; operator confirmed",
+      "cnn_line_contacts": 4,
+      "opencv_logged_forward_span_s": 15.829727936999916,
+      "opencv_lap_time_s": null,
+      "opencv_line_contacts": 0,
+      "both_completed": true,
+      "both_departures": 0,
+      "both_interventions": 0,
+      "cnn_source": "comparison_results/CNN_03R1_20260909_105544/summary.json",
+      "opencv_source": "continuous_local_16s_results/20260909_105712_827635/frames.csv"
+    },
+    {
+      "group": 4,
+      "cnn_trial": 4,
+      "cnn_lap_time_s": 14.831,
+      "cnn_timing_method": "program timing, operator ended one lap; operator confirmed",
+      "cnn_line_contacts": 3,
+      "opencv_logged_forward_span_s": 14.893131036999876,
+      "opencv_lap_time_s": null,
+      "opencv_line_contacts": 0,
+      "both_completed": true,
+      "both_departures": 0,
+      "both_interventions": 0,
+      "cnn_source": "comparison_results/CNN_04_20260909_110106/summary.json",
+      "opencv_source": "continuous_local_16s_results/20260909_110233_666700/frames.csv"
+    },
+    {
+      "group": 5,
+      "cnn_trial": 5,
+      "cnn_lap_time_s": 15.617,
+      "cnn_timing_method": "program timing, operator ended one lap; operator confirmed",
+      "cnn_line_contacts": 3,
+      "opencv_logged_forward_span_s": 15.413458094000816,
+      "opencv_lap_time_s": null,
+      "opencv_line_contacts": 0,
+      "both_completed": true,
+      "both_departures": 0,
+      "both_interventions": 0,
+      "cnn_source": "comparison_results/CNN_05_20260909_110537/summary.json",
+      "opencv_source": "continuous_local_16s_results/20260909_110703_777226/frames.csv"
+    }
+  ],
+  "cnn_lap_time_mean_s": 16.1322,
+  "opencv_logged_forward_span_mean_s": 14.919151597199924,
+  "timing_comparable": false
+}

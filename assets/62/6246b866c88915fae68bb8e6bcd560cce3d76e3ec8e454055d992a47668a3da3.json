@@ -1,0 +1,9 @@
+{
+  "frames": 345,
+  "stop_reason": "time_limit",
+  "hardware_pwm": false,
+  "error": null,
+  "watchdog_error": null,
+  "ready_frames": 345,
+  "fresh_frames": 345
+}

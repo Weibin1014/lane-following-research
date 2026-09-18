@@ -1,0 +1,20 @@
+{
+  "trial_id": "CNN_01R1",
+  "date": "2026-09-12",
+  "source": "user report and pasted console output",
+  "completed_laps": 1,
+  "line_touches": 3,
+  "out_of_bounds": 1,
+  "interventions": 0,
+  "image_directory_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/CNN_RUN_20260912_083059_817688",
+  "control_log_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/cnn_control_logs/20260912_083116_216152",
+  "command_interval_s": 12.52,
+  "phone_lap_time_s": null,
+  "stop_reason": "operator_stop",
+  "stop_request_acknowledged": true,
+  "console_record_count_lower_bound": 240,
+  "camera_and_tub_closed": true,
+  "download_verified": false,
+  "battery_id": null,
+  "notes": "Additional run requested by user; original CNN_01 retained. User reported other events zero. No automatic exclusion of original run or excursion frames."
+}

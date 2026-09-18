@@ -1,0 +1,10 @@
+{
+  "source": "user provided Raspberry Pi replay output",
+  "images": 101,
+  "ready": 101,
+  "estimated": 3,
+  "median_ms": 25.814808999712113,
+  "max_ms": 36.72565399938321,
+  "core_sha256": "22973f0917420e395bea414510eeaa9d00eb5e82c77bd5e5b501166390774e9e",
+  "results": "/home/student/projects/mycar/independent_replay_results/20260908_141724"
+}

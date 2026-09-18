@@ -1,0 +1,9 @@
+{
+  "frames": 46,
+  "stop_reason": "target_unavailable",
+  "hardware_pwm": true,
+  "error": null,
+  "watchdog_error": null,
+  "ready_frames": 45,
+  "fresh_frames": 46
+}

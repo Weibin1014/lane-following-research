@@ -1,0 +1,42 @@
+[
+  {
+    "source": "/Users/zhangweibin/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5ixkmkmulr4q12_7736/temp/RWTemp/2026-09/9e20f478899dc29eb19741386f9343c8/6178293d89d28b6a14b34b8fe8df59e5.jpg",
+    "file": "01_track_overview.jpg",
+    "sha256": "1eb2301cd69c0898ca15e5ec1a6164ba4a1ad0e543fe9d5906839d070e9b05e6",
+    "pixels": [
+      5712,
+      4284
+    ],
+    "bytes": 6222162
+  },
+  {
+    "source": "/Users/zhangweibin/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5ixkmkmulr4q12_7736/temp/RWTemp/2026-09/9e20f478899dc29eb19741386f9343c8/11ac9328673ae248878b6d1744420409.jpg",
+    "file": "02_vehicle_overview.jpg",
+    "sha256": "a44fbe39ceb6d6872565a35df4241fc1ed0416d3953714b1a9556bcc34f67c82",
+    "pixels": [
+      1707,
+      1280
+    ],
+    "bytes": 209883
+  },
+  {
+    "source": "/Users/zhangweibin/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5ixkmkmulr4q12_7736/temp/RWTemp/2026-09/9e20f478899dc29eb19741386f9343c8/36681d9f3e36cc2ffcfc76ff805a04b2.jpg",
+    "file": "03_camera_mount.jpg",
+    "sha256": "f16a0dfa556d2c1ec1e6600a10ece9aec27ee4494555427bd0954e3b9968a6c1",
+    "pixels": [
+      1280,
+      1707
+    ],
+    "bytes": 197748
+  },
+  {
+    "source": "/Users/zhangweibin/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5ixkmkmulr4q12_7736/temp/RWTemp/2026-09/9e20f478899dc29eb19741386f9343c8/ffa8c0d05160c89075bf722d6c06cf97.jpg",
+    "file": "04_electronics_layout.jpg",
+    "sha256": "4f78f932aad0eb93564496544137b5d79ec429a9ea0fae5284695a83f01ac161",
+    "pixels": [
+      1702,
+      1276
+    ],
+    "bytes": 285517
+  }
+]

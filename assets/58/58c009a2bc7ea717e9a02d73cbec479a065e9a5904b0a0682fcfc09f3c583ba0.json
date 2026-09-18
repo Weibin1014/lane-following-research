@@ -1,0 +1,24 @@
+[
+  {
+    "run": "20260909_105712_827635",
+    "frame": 30,
+    "elapsed_s": "1.4801882060000935",
+    "requested_throttle": "400",
+    "requested_steering": "373",
+    "target_source": "paired",
+    "replayed_pwm": 373,
+    "opencv_replay_version": "5.0.0",
+    "core_sha256": "95d59d65510ef4596948c277b16e3def86fe404a8aae71b4b4402715b7c1efa8"
+  },
+  {
+    "run": "20260909_105712_827635",
+    "frame": 104,
+    "elapsed_s": "4.968690100000458",
+    "requested_throttle": "400",
+    "requested_steering": "394",
+    "target_source": "paired",
+    "replayed_pwm": 394,
+    "opencv_replay_version": "5.0.0",
+    "core_sha256": "95d59d65510ef4596948c277b16e3def86fe404a8aae71b4b4402715b7c1efa8"
+  }
+]

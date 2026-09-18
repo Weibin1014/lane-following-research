@@ -1,0 +1,9 @@
+{
+  "frames": 249,
+  "stop_reason": "exit",
+  "hardware_pwm": true,
+  "error": "KeyboardInterrupt: ",
+  "watchdog_error": null,
+  "ready_frames": 249,
+  "fresh_frames": 249
+}

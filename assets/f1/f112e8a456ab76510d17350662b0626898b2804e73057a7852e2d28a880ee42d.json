@@ -1,0 +1,86 @@
+{
+  "opencv": [
+    {
+      "trial": 1,
+      "path": "continuous_local_16s_results/20260909_102814_724759/frames.csv",
+      "frames": 335,
+      "capture_span_s": 15.783542000000125,
+      "observed_fps": 21.161283063079082,
+      "logged_forward_span_s": 15.550429570999768,
+      "first_drive_frame": "5",
+      "last_elapsed_s": 15.81366148699999,
+      "raw_images": 112,
+      "timestamp_monotonic": true
+    },
+    {
+      "trial": 2,
+      "path": "continuous_local_16s_results/20260909_103843_738108/frames.csv",
+      "frames": 279,
+      "capture_span_s": 13.14510699999937,
+      "observed_fps": 21.14855360249356,
+      "logged_forward_span_s": 12.90901134699925,
+      "first_drive_frame": "5",
+      "last_elapsed_s": 13.172857445999398,
+      "raw_images": 94,
+      "timestamp_monotonic": true
+    },
+    {
+      "trial": 3,
+      "path": "continuous_local_16s_results/20260909_105712_827635/frames.csv",
+      "frames": 341,
+      "capture_span_s": 16.066251999999622,
+      "observed_fps": 21.162371908520296,
+      "logged_forward_span_s": 15.829727936999916,
+      "first_drive_frame": "5",
+      "last_elapsed_s": 16.134168024000246,
+      "raw_images": 115,
+      "timestamp_monotonic": true
+    },
+    {
+      "trial": 4,
+      "path": "continuous_local_16s_results/20260909_110233_666700/frames.csv",
+      "frames": 320,
+      "capture_span_s": 15.123943999999938,
+      "observed_fps": 21.092381722651268,
+      "logged_forward_span_s": 14.893131036999876,
+      "first_drive_frame": "5",
+      "last_elapsed_s": 15.165894531999584,
+      "raw_images": 109,
+      "timestamp_monotonic": true
+    },
+    {
+      "trial": 5,
+      "path": "continuous_local_16s_results/20260909_110703_777226/frames.csv",
+      "frames": 332,
+      "capture_span_s": 15.643728999999439,
+      "observed_fps": 21.1586380715245,
+      "logged_forward_span_s": 15.413458094000816,
+      "first_drive_frame": "5",
+      "last_elapsed_s": 15.710102729999562,
+      "raw_images": 111,
+      "timestamp_monotonic": true
+    }
+  ],
+  "cnn": [
+    {
+      "path": "comparison_results/CNN_01_20260909_102449/summary.json",
+      "command_duration_s": 18.142
+    },
+    {
+      "path": "comparison_results/CNN_02_20260909_103109/summary.json",
+      "command_duration_s": 16.618
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105544/summary.json",
+      "command_duration_s": 15.453
+    },
+    {
+      "path": "comparison_results/CNN_04_20260909_110106/summary.json",
+      "command_duration_s": 14.831
+    },
+    {
+      "path": "comparison_results/CNN_05_20260909_110537/summary.json",
+      "command_duration_s": 15.617
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "frames": 43,
+  "stop_reason": "exit",
+  "hardware_pwm": true,
+  "error": "[Errno 5] Input/output error",
+  "watchdog_error": null,
+  "ready_frames": 43,
+  "fresh_frames": 43
+}

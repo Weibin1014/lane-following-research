@@ -1,0 +1,35 @@
+{
+  "trial": "OpenCV_02",
+  "source": "user identified sample 3,5,8 green markers left of centre; assistant checked original row 78",
+  "status": "user confirmed three corrected green markers acceptable",
+  "corrections": [
+    {
+      "sample": 3,
+      "old_right_x": 117,
+      "new_right_x": 118.5,
+      "paint_span_approx": [
+        115,
+        122
+      ]
+    },
+    {
+      "sample": 5,
+      "old_right_x": 120,
+      "new_right_x": 126.5,
+      "paint_span_approx": [
+        123,
+        130
+      ]
+    },
+    {
+      "sample": 8,
+      "old_right_x": 124,
+      "new_right_x": 128.5,
+      "paint_span_approx": [
+        125,
+        132
+      ]
+    }
+  ],
+  "user_confirmation": "没有问题"
+}

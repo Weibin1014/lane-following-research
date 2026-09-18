@@ -1,0 +1,33 @@
+{
+  "trial_id": "CNN_01",
+  "date": "2026-09-12",
+  "source": "user report and pasted console output",
+  "completed_laps": 1,
+  "line_touches": 1,
+  "out_of_bounds": null,
+  "interventions": 0,
+  "battery_id": null,
+  "voltage": null,
+  "control_log_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/cnn_control_logs/20260912_080948_647069",
+  "image_directory_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/CNN_RUN_20260912_080941_040014",
+  "command_interval_s": 24.871,
+  "phone_lap_time_s": null,
+  "stop_reason": "operator_stop",
+  "stop_request_acknowledged": true,
+  "recording_requested_during_drive": true,
+  "console_record_count_lower_bound": 490,
+  "download_verified": true,
+  "notes": "Command interval is not independently measured lap time. Image count and correspondence pending. Unreported observations remain null.",
+  "data_audit": {
+    "records": 496,
+    "all_images_present": true,
+    "all_predictions_finite": true,
+    "timestamps_strictly_increasing": true,
+    "record_span_s": 24.763,
+    "interval_ms_min_median_max": [
+      23,
+      50,
+      57
+    ]
+  }
+}

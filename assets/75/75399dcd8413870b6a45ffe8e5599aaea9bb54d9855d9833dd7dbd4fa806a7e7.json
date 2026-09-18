@@ -1,0 +1,41 @@
+{
+  "trial_id": "CNN_03",
+  "date": "2026-09-12",
+  "source": "user report and pasted console output",
+  "completed_laps": 1,
+  "line_touches": 2,
+  "out_of_bounds": 1,
+  "interventions": 0,
+  "battery_id": null,
+  "same_battery_as_opencv_02_confirmed": null,
+  "image_directory_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/CNN_RUN_20260912_082503_192901",
+  "control_log_remote": "/home/student/projects/mycar/pixel_evaluation_20260912/cnn_control_logs/20260912_082525_462518",
+  "command_interval_s": 11.827,
+  "phone_lap_time_s": null,
+  "stop_reason": "operator_stop",
+  "stop_request_acknowledged": true,
+  "console_record_count_lower_bound": 230,
+  "camera_and_tub_closed": true,
+  "download_verified": true,
+  "notes": "Operator confirms self recovery after one out-of-bounds event. Retain excursion and all frames; command interval is not independently measured lap time.",
+  "recovery": "returned_to_lane_without_human_intervention_reported_by_operator",
+  "data_audit": {
+    "records": 236,
+    "saved_images": 236,
+    "all_images_present": true,
+    "all_predictions_finite": true,
+    "timestamps_strictly_increasing": true,
+    "record_span_s": 11.746,
+    "interval_ms_min_median_max": [
+      21,
+      50,
+      55
+    ],
+    "modes": [
+      "local_angle"
+    ],
+    "user_throttle": [
+      0.375
+    ]
+  }
+}

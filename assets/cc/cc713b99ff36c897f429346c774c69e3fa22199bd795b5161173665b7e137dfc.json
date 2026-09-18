@@ -1,0 +1,62 @@
+[
+  {
+    "trial": "CNN_03",
+    "selected": 10,
+    "measured": 6,
+    "unmeasurable": 4,
+    "mse_px2": 390.09375,
+    "rmse_px": 19.750791123395537,
+    "mae_px": 15.125,
+    "status": "draft conditional-on-visible-markings estimate"
+  },
+  {
+    "trial": "CNN_01R1",
+    "selected": 10,
+    "measured": 7,
+    "unmeasurable": 3,
+    "mse_px2": 455.4017857142857,
+    "rmse_px": 21.340144931895043,
+    "mae_px": 19.321428571428573,
+    "status": "draft conditional-on-visible-markings estimate"
+  },
+  {
+    "trial": "CNN_02R1",
+    "selected": 10,
+    "measured": 5,
+    "unmeasurable": 5,
+    "mse_px2": 238.6375,
+    "rmse_px": 15.447896296907226,
+    "mae_px": 13.05,
+    "status": "draft conditional-on-visible-markings estimate"
+  },
+  {
+    "trial": "OpenCV_02",
+    "selected": 10,
+    "measured": 5,
+    "unmeasurable": 5,
+    "mse_px2": 11.2875,
+    "rmse_px": 3.359687485466468,
+    "mae_px": 2.95,
+    "status": "draft conditional-on-visible-markings estimate"
+  },
+  {
+    "trial": "OpenCV_03",
+    "selected": 10,
+    "measured": 6,
+    "unmeasurable": 4,
+    "mse_px2": 9.041666666666666,
+    "rmse_px": 3.0069364254447857,
+    "mae_px": 2.3333333333333335,
+    "status": "draft conditional-on-visible-markings estimate"
+  },
+  {
+    "trial": "OpenCV_01R1",
+    "selected": 10,
+    "measured": 5,
+    "unmeasurable": 5,
+    "mse_px2": 5.75,
+    "rmse_px": 2.3979157616563596,
+    "mae_px": 2.0,
+    "status": "draft conditional-on-visible-markings estimate"
+  }
+]

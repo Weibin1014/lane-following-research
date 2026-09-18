@@ -1,0 +1,101 @@
+[
+  {
+    "frame": 128,
+    "age": 0.14134700000067824,
+    "shared": 15,
+    "shift": 1.0,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 129,
+    "age": 0.18846300000041083,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 130,
+    "age": 0.23557500000060827,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 137,
+    "age": 0.047118000000409666,
+    "shared": 15,
+    "shift": 0.5,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 138,
+    "age": 0.09423199999946519,
+    "shared": 15,
+    "shift": 1.5,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 169,
+    "age": 0.18846400000074937,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 170,
+    "age": 0.23557900000014342,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 171,
+    "age": 0.28269400000135647,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 172,
+    "age": 0.32981000000108907,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 186,
+    "age": 0.18845999999939522,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  },
+  {
+    "frame": 310,
+    "age": 0.18846300000041083,
+    "shared": 0,
+    "shift": null,
+    "checked": null,
+    "supported": null,
+    "points": 0
+  }
+]

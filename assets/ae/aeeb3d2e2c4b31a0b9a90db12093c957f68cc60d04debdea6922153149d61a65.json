@@ -1,0 +1,38 @@
+{
+  "method": "assistant visual coarse intervals, image width160, near row78, not ground truth or calibrated labels",
+  "sequence": "20260908_142524_316400",
+  "entries": [
+    {
+      "frame": 128,
+      "near_interval": [
+        58,
+        72
+      ],
+      "note": "道路可见；模型无近远目标。黄色虚线有空隙，区间是对车道中心的粗略视觉估计。"
+    },
+    {
+      "frame": 169,
+      "near_interval": [
+        60,
+        74
+      ],
+      "note": "道路可见；直接配对近目标66.75，落在粗略参考区间；远目标缺失导致不可用。"
+    },
+    {
+      "frame": 190,
+      "near_interval": [
+        60,
+        75
+      ],
+      "note": "有效帧对照：近目标66.25，远目标64.25（高度60%）。近目标落在粗略参考区间。"
+    },
+    {
+      "frame": 310,
+      "near_interval": [
+        69,
+        88
+      ],
+      "note": "道路可见；无目标。画面姿态与入口明显不同，不能按入口固定车道宽度判断。"
+    }
+  ]
+}

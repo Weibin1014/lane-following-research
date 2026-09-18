@@ -1,0 +1,10 @@
+{
+  "trial": "CNN_01R1",
+  "sample": 6,
+  "user_feedback": "Green point not at centre; other points stated accurate. Scope not expanded to claim independent review of all 60 samples.",
+  "old_right_x": 82,
+  "new_right_x": 84,
+  "measurement_y": 78,
+  "basis": "Raw row paint spans approximately x=79..89; midpoint 84. Edge transition pixels at 78 and 90 are darker.",
+  "correction_status": "assistant corrected following user feedback; corrected point not yet reconfirmed by user"
+}

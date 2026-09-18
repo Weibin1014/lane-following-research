@@ -1,0 +1,60 @@
+OpenCV Vision: Meeting Notes
+Based on the archived controller used for the completed driving trials.
+
+1. Overall method
+My current OpenCV controller uses colour segmentation and geometric checks to find the lane centre.
+It detects the white and yellow markings, follows them across several image rows, and uses their positions to control steering.
+
+2. Camera and image region
+The images are 160 by 120 pixels, and the camera is configured for 20 frames per second.
+The detector samples rows between about 55% and 90% of the image height, with roughly three pixels between rows.
+
+3. Colour thresholds
+I convert the image to HSV and apply separate thresholds for white and yellow.
+White: H = 0–179, S = 0–80, V = 145–255.
+Yellow: H = 15–40, S = 60–255, V = 80–255.
+These thresholds were selected for the tested track and lighting conditions.
+
+4. Noise removal
+For the white mask, I use a horizontal 1-by-3 opening operation.
+For the yellow mask, I use 3-by-3 opening and closing operations.
+The current controller does not use the earlier Canny and Hough pipeline.
+
+5. Boundary checks
+I check that the white boundary is continuous across image rows.
+I also check the distance between the yellow and white markings and whether the area between them looks like the dark road surface.
+The allowed boundary spacing is 15% to 85% of the image width, or 24 to 136 pixels.
+This is an image-space constraint, not a measured physical lane width.
+
+6. Lane centre
+When both boundaries are valid, I take the midpoint between them:
+lane_centre_x = (white_x + yellow_x) / 2.
+If direct pairing is unavailable, the controller tries a constrained boundary fit or a local centre-line fit.
+The local fit requires at least three centre points and a maximum residual of 1.5 pixels, along with additional uncertainty checks.
+
+7. Steering
+The near target is at 65% of the image height.
+The far target is at 55%, or 60% if the first target is unavailable.
+The controller uses both the near-centre offset and the change between the near and far centres, so it can respond to bends.
+The direction term has a weight of 1.5.
+The steering PWM centre is 365, with a range of 290 to 440.
+The forward throttle request is 400, and the stopped request is 370.
+
+8. Centre-offset evaluation
+The image centre is x = 80 pixels.
+The code already computes a normalized near-centre offset:
+near_offset = (near_centre_x - 80) / 80.
+The signed pixel offset can therefore be recovered as:
+pixel_offset = near_offset * 80.
+The absolute distance is abs(pixel_offset).
+However, I have not yet validated and summarized these values as a formal evaluation result.
+The estimated lane centre also needs checking; a logged control value is not automatically an independent reference measurement.
+
+9. Questions for the supervisor
+Should I measure the horizontal pixel distance at a fixed image row, such as 65% of the image height?
+Would manually marking the lane boundaries in sampled images be a suitable reference?
+Should I report the mean absolute offset and the variation for each run?
+For a fair comparison, should I record images from both controllers and apply the same evaluation method?
+
+Short spoken version
+My OpenCV controller detects the white and yellow markings using HSV thresholds. It checks their continuity and geometry, then estimates the lane centre. For steering, it uses both a near point and a farther point to follow bends. The code already calculates a centre offset, but I still need to check it and turn it into a formal evaluation. Would measuring the pixel distance at a fixed image row be the right approach?

@@ -1,0 +1,125 @@
+[
+  {
+    "run": "20260908_131031_179493",
+    "summary": {
+      "frames": 112,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 112,
+      "fresh_frames": 112
+    },
+    "core_sha256": "16939c76010f1e2ac90ad14a8df27d24e5619acea2c356536b0e96061a2eecaf",
+    "near_offset": {
+      "first": -0.075,
+      "last": -0.0125,
+      "min": -0.075,
+      "max": 0.040625,
+      "median": 0.0
+    },
+    "preview_error": {
+      "first": -0.20156250000000003,
+      "last": -0.20937500000000003,
+      "min": -0.23750000000000004,
+      "max": -0.1312499999999999,
+      "median": -0.18437500000000007
+    },
+    "requested_steering": {
+      "first": 395.0,
+      "last": 396.0,
+      "min": 385.0,
+      "max": 401.0,
+      "median": 393.0
+    },
+    "vision_ms": {
+      "first": 11.814439999398019,
+      "last": 12.155620999692474,
+      "min": 10.271499999362277,
+      "max": 14.512863999698311,
+      "median": 11.91127200036135
+    }
+  },
+  {
+    "run": "20260908_131328_122874",
+    "summary": {
+      "frames": 112,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 112,
+      "fresh_frames": 112
+    },
+    "core_sha256": "16939c76010f1e2ac90ad14a8df27d24e5619acea2c356536b0e96061a2eecaf",
+    "near_offset": {
+      "first": -0.025,
+      "last": -0.01875,
+      "min": -0.03541666666666661,
+      "max": 0.0375,
+      "median": -0.003125
+    },
+    "preview_error": {
+      "first": -0.15625,
+      "last": -0.21093750000000006,
+      "min": -0.23906250000000004,
+      "max": -0.12187499999999989,
+      "median": -0.17968750000000006
+    },
+    "requested_steering": {
+      "first": 388.0,
+      "last": 397.0,
+      "min": 383.0,
+      "max": 401.0,
+      "median": 392.0
+    },
+    "vision_ms": {
+      "first": 11.390562000087812,
+      "last": 10.970864000228175,
+      "min": 9.753807000379311,
+      "max": 13.462234999678913,
+      "median": 11.563447999833443
+    }
+  },
+  {
+    "run": "20260908_131416_561369",
+    "summary": {
+      "frames": 112,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 112,
+      "fresh_frames": 112
+    },
+    "core_sha256": "16939c76010f1e2ac90ad14a8df27d24e5619acea2c356536b0e96061a2eecaf",
+    "near_offset": {
+      "first": -0.04375,
+      "last": 0.003125,
+      "min": -0.04375,
+      "max": 0.053125,
+      "median": 0.0
+    },
+    "preview_error": {
+      "first": -0.18437500000000007,
+      "last": -0.22187500000000004,
+      "min": -0.23593750000000002,
+      "max": -0.11874999999999987,
+      "median": -0.1859375
+    },
+    "requested_steering": {
+      "first": 393.0,
+      "last": 398.0,
+      "min": 383.0,
+      "max": 400.0,
+      "median": 393.0
+    },
+    "vision_ms": {
+      "first": 12.640932999602228,
+      "last": 11.098214999947231,
+      "min": 9.728845000608999,
+      "max": 14.002488999722118,
+      "median": 11.549078999451012
+    }
+  }
+]

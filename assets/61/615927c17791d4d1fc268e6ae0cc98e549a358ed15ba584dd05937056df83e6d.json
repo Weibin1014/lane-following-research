@@ -1,0 +1,62 @@
+{
+  "trial": "OpenCV_03",
+  "source": "user identified green marker directions; assistant checked raw row 78",
+  "status": "user confirmed six corrected green markers acceptable",
+  "corrections": [
+    {
+      "sample": 1,
+      "old_right_x": 124,
+      "new_right_x": 125.5,
+      "paint_span_approx": [
+        122,
+        129
+      ]
+    },
+    {
+      "sample": 2,
+      "old_right_x": 121,
+      "new_right_x": 119.5,
+      "paint_span_approx": [
+        116,
+        123
+      ]
+    },
+    {
+      "sample": 3,
+      "old_right_x": 117,
+      "new_right_x": 118.5,
+      "paint_span_approx": [
+        115,
+        122
+      ]
+    },
+    {
+      "sample": 4,
+      "old_right_x": 119,
+      "new_right_x": 122,
+      "paint_span_approx": [
+        118,
+        126
+      ]
+    },
+    {
+      "sample": 9,
+      "old_right_x": 121,
+      "new_right_x": 117,
+      "paint_span_approx": [
+        113,
+        121
+      ]
+    },
+    {
+      "sample": 10,
+      "old_right_x": 121,
+      "new_right_x": 122.5,
+      "paint_span_approx": [
+        119,
+        126
+      ]
+    }
+  ],
+  "user_confirmation": "没有问题"
+}

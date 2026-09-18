@@ -1,0 +1,23 @@
+{
+  "trial_id": "OpenCV_03",
+  "date": "2026-09-12",
+  "source": "user report and pasted summary",
+  "completed_laps": 1,
+  "line_touches": 0,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "remote_directory": "/home/student/projects/mycar/pixel_evaluation_20260912/opencv_runs/20260912_082750_454344",
+  "summary_reported": {
+    "frames": 257,
+    "stop_reason": "exit",
+    "hardware_pwm": true,
+    "error": "KeyboardInterrupt: ",
+    "watchdog_error": null,
+    "ready_frames": 257,
+    "fresh_frames": 257
+  },
+  "download_verified": false,
+  "battery_id": null,
+  "voltage": null,
+  "notes": "Operator reports complete lap and zero other events. KeyboardInterrupt retained as operator termination. Same battery was requested but not independently confirmed."
+}

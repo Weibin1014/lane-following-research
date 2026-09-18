@@ -1,0 +1,14 @@
+{
+  "kind": "static_only_not_driving",
+  "hardware_pwm": false,
+  "model": "/home/student/projects/mycar/models/mypilot.tflite",
+  "model_sha256": "44f60f15cb89cf7394bfe1d8b482a94add2240246ace44a0389e1d92bf14a237",
+  "model_type": "tflite_linear",
+  "max_loops": 300,
+  "image_width": 160,
+  "image_height": 120,
+  "recording_forced": true,
+  "error": null,
+  "completed": true,
+  "saved_jpg_count": 300
+}

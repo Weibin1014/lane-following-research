@@ -1,0 +1,84 @@
+{
+  "scope": "13 CNN records with null completed_lap in archive",
+  "operator_statement": "调试",
+  "records": [
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104648/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104740/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_104850/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105100/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105127/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105207/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105415/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03R1_20260909_105504/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104314/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104425/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_03_20260909_104525/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_04_20260909_110027/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    },
+    {
+      "path": "comparison_results/CNN_05_20260909_110457/summary.json",
+      "classification": "debug",
+      "source": "operator confirmation in conversation after archive audit",
+      "original_outcomes_preserved": true
+    }
+  ]
+}

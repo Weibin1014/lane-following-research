@@ -1,0 +1,69 @@
+OpenCV Vision and Control Parameters
+Source: archived s2_preview_core_local.py and driving runner used in the verified trials.
+
+Image acquisition and sampling
+- Image resolution: 160 × 120 pixels
+- Configured camera frame rate: 20 Hz
+- Scan-row range: 55%–90% of image height
+- Scan-row spacing: 2.5% of image height (approximately 3 pixels)
+- Processing crop start: max(0, int(height × 0.55) − 6), or row 60 for a 120-pixel image
+
+HSV colour thresholds
+- White lower bound: [0, 0, 145]
+- White upper bound: [179, 80, 255]
+- Yellow lower bound: [15, 60, 80]
+- Yellow upper bound: [40, 255, 255]
+
+Morphological filtering
+- White mask: opening with a 1-row × 3-column kernel; no closing
+- Yellow mask: opening and closing with a 3 × 3 kernel
+
+Boundary and lane checks
+- Candidate segment width: 2 pixels to 18% of image width
+- Minimum white-path support: 9 sampled points
+- Dark-pixel threshold: V < 145
+- Minimum dark-pixel proportion beside the white boundary: 80%
+- Allowed yellow-to-white boundary spacing: 15%–85% of image width (24–136 pixels)
+- Minimum checked lane-interior strip length: 8 pixels
+- Minimum dark-pixel proportion within that strip: 90%
+- Maximum number of candidate white paths considered: 64
+
+Independent yellow-boundary fit (fallback)
+- Polynomial degree: 2
+- Minimum number of yellow anchors: 8
+- Minimum vertical anchor span: 20% of image height
+- Inlier residual threshold: 2.5% of image width (4 pixels)
+- Minimum inlier proportion: 90%
+
+Local lane-centre fit (fallback)
+- Polynomial degree: 1
+- Minimum number of centre points: 3
+- Minimum vertical support span: 5% of image height
+- Maximum extrapolation to the near target: 5% of image height
+- Maximum absolute fit residual: 1.5 pixels
+- Maximum estimated near-target uncertainty: 1.5 pixels
+- Additional slope-uncertainty and candidate-agreement checks are applied
+
+Target positions and steering
+- Near-target row: 65% of image height (row 78)
+- Far-target row: 55% preferred (row 66), otherwise 60% (row 72)
+- Maximum interpolation span between supporting points: 15% of image height
+- Image-centre x-coordinate used by the controller: 80 pixels
+- Direction-term weight: 1.5
+- Preview-error clipping range: −1 to +1
+- Steering saturation scale: 0.5 in preview-error units
+- Steering PWM centre: 365
+- Steering PWM range: 290–440
+- Fixed forward-throttle PWM request: 400
+- Stopped-throttle PWM request: 370
+
+Centre-offset calculation
+- Lane centre: (white_x + yellow_x) / 2
+- Normalized near offset: (near_x − 80) / 80
+- Signed near offset in pixels: near_offset × 80
+- Absolute near offset in pixels: abs(near_offset × 80)
+
+Notes
+- These are parameters of the archived tested implementation, not a live check of the Raspberry Pi.
+- Image-space width limits are not physical lane-width measurements.
+- The near-offset value is a controller estimate; formal evaluation and reference validation remain to be completed.

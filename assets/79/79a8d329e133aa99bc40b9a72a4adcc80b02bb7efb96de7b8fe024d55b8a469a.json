@@ -1,0 +1,8 @@
+{
+  "frames": 319,
+  "saved_frames": 319,
+  "error": null,
+  "hardware_pwm": false,
+  "duration_limit_s": 15,
+  "frame_limit": 600
+}

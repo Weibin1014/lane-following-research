@@ -1,0 +1,83 @@
+[
+  {
+    "run": "20260908_152243_132290",
+    "summary": {
+      "frames": 344,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 344,
+      "fresh_frames": 344
+    },
+    "sources": {
+      "paired": 343,
+      "independent_estimated": 1
+    },
+    "pwm": [
+      354,
+      383,
+      405
+    ],
+    "max_step": 9,
+    "vision_ms": [
+      28.27004900063912,
+      42.38175099999353
+    ],
+    "core_sha": "95d59d65510ef4596948c277b16e3def86fe404a8aae71b4b4402715b7c1efa8"
+  },
+  {
+    "run": "20260908_152535_389653",
+    "summary": {
+      "frames": 345,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 345,
+      "fresh_frames": 345
+    },
+    "sources": {
+      "paired": 343,
+      "independent_estimated": 2
+    },
+    "pwm": [
+      356,
+      383.0,
+      408
+    ],
+    "max_step": 10,
+    "vision_ms": [
+      28.08395199917868,
+      39.470060999519774
+    ],
+    "core_sha": "95d59d65510ef4596948c277b16e3def86fe404a8aae71b4b4402715b7c1efa8"
+  },
+  {
+    "run": "20260908_152627_147979",
+    "summary": {
+      "frames": 345,
+      "stop_reason": "time_limit",
+      "hardware_pwm": true,
+      "error": null,
+      "watchdog_error": null,
+      "ready_frames": 345,
+      "fresh_frames": 345
+    },
+    "sources": {
+      "paired": 343,
+      "independent_estimated": 2
+    },
+    "pwm": [
+      354,
+      384.0,
+      408
+    ],
+    "max_step": 11,
+    "vision_ms": [
+      27.87106649884663,
+      37.68890700121119
+    ],
+    "core_sha": "95d59d65510ef4596948c277b16e3def86fe404a8aae71b4b4402715b7c1efa8"
+  }
+]

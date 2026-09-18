@@ -1,0 +1,99 @@
+{
+  "trial": "CNN_03",
+  "source": "user reports most green points left of centre; assistant rechecked row 78 of all originals",
+  "status": "user confirmed revised displayed markers acceptable",
+  "corrections": [
+    {
+      "sample": 1,
+      "old_right_x": 120,
+      "new_right_x": 120.5,
+      "paint_span_approx": [
+        117,
+        124
+      ]
+    },
+    {
+      "sample": 2,
+      "old_right_x": 110,
+      "new_right_x": 111.0,
+      "paint_span_approx": [
+        107,
+        115
+      ]
+    },
+    {
+      "sample": 3,
+      "old_right_x": 105,
+      "new_right_x": 105.0,
+      "paint_span_approx": [
+        101,
+        109
+      ]
+    },
+    {
+      "sample": 4,
+      "old_right_x": 100,
+      "new_right_x": 101.0,
+      "paint_span_approx": [
+        96,
+        106
+      ]
+    },
+    {
+      "sample": 5,
+      "old_right_x": 107,
+      "new_right_x": 107.5,
+      "paint_span_approx": [
+        103,
+        112
+      ]
+    },
+    {
+      "sample": 6,
+      "old_right_x": 97,
+      "new_right_x": 100.5,
+      "paint_span_approx": [
+        96,
+        105
+      ]
+    },
+    {
+      "sample": 7,
+      "old_right_x": 120,
+      "new_right_x": 120.5,
+      "paint_span_approx": [
+        117,
+        124
+      ]
+    },
+    {
+      "sample": 8,
+      "old_right_x": 78,
+      "new_right_x": 79.0,
+      "paint_span_approx": [
+        74,
+        84
+      ]
+    },
+    {
+      "sample": 9,
+      "old_right_x": 110,
+      "new_right_x": 112.0,
+      "paint_span_approx": [
+        107,
+        117
+      ]
+    },
+    {
+      "sample": 10,
+      "old_right_x": 101,
+      "new_right_x": 104.5,
+      "paint_span_approx": [
+        100,
+        109
+      ]
+    }
+  ],
+  "note": "No uniform translation. Sample 3 remains x=105 because local paint span is approximately 101..109. Unmeasurable left boundaries remain excluded.",
+  "user_confirmation": "没有问题"
+}

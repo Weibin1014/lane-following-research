@@ -1,0 +1,53 @@
+{
+  "trial": "OpenCV_01R1",
+  "source": "user feedback; assistant rechecked raw row 78 paint spans",
+  "status": "user confirmed final corrected positions",
+  "corrections": [
+    {
+      "sample": 1,
+      "old_right_x": 123,
+      "new_right_x": 120.5,
+      "paint_span_approx": [
+        117,
+        124
+      ]
+    },
+    {
+      "sample": 2,
+      "old_right_x": 121,
+      "new_right_x": 117,
+      "paint_span_approx": [
+        113,
+        121
+      ]
+    },
+    {
+      "sample": 4,
+      "old_right_x": 119,
+      "new_right_x": 122.5,
+      "paint_span_approx": [
+        118,
+        127
+      ]
+    },
+    {
+      "sample": 8,
+      "old_right_x": 121,
+      "new_right_x": 128,
+      "paint_span_approx": [
+        124,
+        132
+      ]
+    }
+  ],
+  "followup_corrections": [
+    {
+      "sample": 1,
+      "previous_right_x": 120.5,
+      "new_right_x": 121,
+      "basis": "User indicates previous marker still slightly left. Exclude beige transition at x117; bright white interior approximately x118..124 has midpoint121.",
+      "status": "user confirmed"
+    }
+  ],
+  "user_confirmation": "没有问题"
+}

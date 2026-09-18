@@ -1,0 +1,11 @@
+{
+  "method": "CNN steering, fixed throttle",
+  "model": "models/mypilot.tflite",
+  "mode": "local_angle",
+  "throttle": 0.375,
+  "phone_lap_time_s": null,
+  "recording_requested_during_drive": true,
+  "stop_request_acknowledged": true,
+  "stop_reason": "operator_stop",
+  "command_interval_s": 12.52
+}

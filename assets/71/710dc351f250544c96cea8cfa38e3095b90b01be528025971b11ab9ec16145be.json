@@ -1,0 +1,23 @@
+{
+  "hashes": {
+    "temporal_probe.py": "3a17dea0c0c0821e67fa58fdee2cc2bfd89b88e13544bcc860c42482269e74d2",
+    "s2_preview_core_independent.py": "22973f0917420e395bea414510eeaa9d00eb5e82c77bd5e5b501166390774e9e"
+  },
+  "pi_replay": {
+    "frames": 320,
+    "ready": 320,
+    "temporal_frames": [
+      190,
+      191,
+      192,
+      211,
+      212,
+      215,
+      216,
+      217
+    ],
+    "median_ms": 31.741497000439267,
+    "max_ms": 48.17531499975303
+  },
+  "status": "Frozen for independent manual-push sequence validation; not approved for driving"
+}

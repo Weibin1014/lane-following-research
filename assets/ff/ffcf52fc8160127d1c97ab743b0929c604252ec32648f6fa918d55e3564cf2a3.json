@@ -1,0 +1,30 @@
+{
+  "trial_id": "OpenCV_02",
+  "date": "2026-09-12",
+  "source": "user report and pasted summary",
+  "completed_laps": 1,
+  "line_touches": 0,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "remote_directory": "/home/student/projects/mycar/pixel_evaluation_20260912/opencv_runs/20260912_082301_535034",
+  "summary_reported": {
+    "frames": 249,
+    "stop_reason": "exit",
+    "hardware_pwm": true,
+    "error": "KeyboardInterrupt: ",
+    "watchdog_error": null,
+    "ready_frames": 249,
+    "fresh_frames": 249
+  },
+  "download_verified": true,
+  "battery_id": null,
+  "voltage": null,
+  "notes": "User confirms battery changed. Same start/end not yet confirmed. Sensor span is not independently measured lap time; battery effect not isolated.",
+  "battery_changed": true,
+  "saved_raw_images": 84,
+  "saved_debug_images": 84,
+  "sensor_span_s": 11.731803000000127,
+  "timestamps_strictly_increasing": true,
+  "first_saved_frame": 1,
+  "last_saved_frame": 248
+}

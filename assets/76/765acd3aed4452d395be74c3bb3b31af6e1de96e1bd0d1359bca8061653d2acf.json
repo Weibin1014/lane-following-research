@@ -1,0 +1,29 @@
+{
+  "measurement": "single lap runtime; program timing, operator termination",
+  "source": "operator explicit confirmation that recorded durations correspond to one lap",
+  "original_field": "command_duration_s",
+  "trials": [
+    {
+      "trial": 1,
+      "lap_time_s": 18.142
+    },
+    {
+      "trial": 2,
+      "lap_time_s": 16.618
+    },
+    {
+      "trial": "3R1",
+      "lap_time_s": 15.453
+    },
+    {
+      "trial": 4,
+      "lap_time_s": 14.831
+    },
+    {
+      "trial": 5,
+      "lap_time_s": 15.617
+    }
+  ],
+  "mean_lap_time_s": 16.1322,
+  "automatic_crossing_detection": false
+}
