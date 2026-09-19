@@ -6,13 +6,13 @@
   <meta name="description" content="Evidence-led archive of a Raspberry Pi lane-following study: experiments, results, videos, source code and original records.">
   <title>Lane Following Research · Experiment Archive</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b1620'/%3E%3Cpath d='M17 51 26 13M47 51 38 13' stroke='%23d8f667' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=3">
   <link rel="stylesheet" href="./charts.css">
-  <link rel="stylesheet" href="./thesis.css">
+  <link rel="stylesheet" href="./thesis.css?v=3">
   <script src="./file-labels.js" defer></script>
   <script src="./charts.js" defer></script>
   <script src="./app.js" defer></script>
-  <script src="./site-shell.js" defer></script>
+  <script src="./site-shell.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
@@ -60,13 +60,61 @@
 
     <section id="methods" class="section section-light">
       <div class="section-head"><div><p class="overline">RESEARCH METHODS / FROM THE THESIS</p><h2>How images become<br><span>steering decisions.</span></h2></div><p>Selected methods and equations from Chapters 3–5 of the thesis draft. Each formula includes its variables, units and connection to the recorded experiments.</p></div>
+      <div class="methods-meta" aria-label="Formula collection summary"><span>6 method cards</span><span>Equations 4.1–5.4</span><span>Thesis-derived notation</span></div>
       <div class="method-grid">
-        <article class="method-card"><span class="small-label">OPENCV / COLOUR AND GEOMETRY · §4.4</span><h3>Extract the marked lane</h3><p>The camera provides 160 × 120 images. HSV masks identify white and yellow markings. A 1 × 3 opening preserves thin white markings; the yellow branch uses 3 × 3 opening and closing. Boundary pairing checks width, continuity and dark road evidence before accepting a centre target.</p><div class="equation">x<sub>c</sub>(r) = [x<sub>y</sub>(r) + x<sub>w</sub>(r)] / 2</div><p class="method-note">x<sub>y</sub> and x<sub>w</sub> are the horizontal yellow and white marking positions at relative image height r = y/H. Their midpoint x<sub>c</sub> is measured in pixels. Source: Eq. (4.1).</p></article>
-        <article class="method-card"><span class="small-label">CNN / IMITATION LEARNING · §4.5</span><h3>Predict steering from demonstrations</h3><p>DonkeyCar KerasLinear learns from recorded camera images and driving commands. The preserved training record contains 39 epochs; the existing model is deployed in TensorFlow Lite format on the Raspberry Pi.</p><div class="equation">camera image → CNN → steering prediction</div><p class="method-note">During comparison, local_angle mode uses learned steering with fixed throttle 0.375, equivalent to a request of 400 PWM counts. Validation loss measures fitting to recorded examples; it does not establish lap completion or lane clearance. Quantization and pruning are proposed extensions without measured improvements in this study.</p></article>
-        <article class="method-card"><span class="small-label">IMAGE-SPACE OFFSETS · EQ. (4.2)</span><h3>Measure near and far targets</h3><div class="equation">e<sub>n</sub> = [x<sub>c</sub>(r<sub>n</sub>) − W/2] / (W/2)<br>e<sub>f</sub> = [x<sub>c</sub>(r<sub>f</sub>) − W/2] / (W/2)</div><p>W = 160 pixels. The near row r<sub>n</sub> = 0.65 corresponds to y = 78. The far row r<sub>f</sub> = 0.55 corresponds to y = 66; r<sub>f</sub> = 0.60 is an alternative when the first location is unavailable.</p><p class="method-note">Offsets are dimensionless. A positive value places the target to the right of the image centre.</p></article>
-        <article class="method-card"><span class="small-label">PREVIEW CONTROL · EQS. (4.3)–(4.5)</span><h3>Combine position and road direction</h3><div class="equation">t = (e<sub>f</sub> − e<sub>n</sub>) × 0.10 / (0.65 − r<sub>f</sub>)<br>e<sub>p</sub> = clip(e<sub>n</sub> + 1.5t, −1, 1)<br>P<sub>s</sub> = round[365 − 75 × clip(e<sub>p</sub>/0.5, −1, 1)]</div><p>The preview term t lets farther road direction influence steering. clip restricts a value to the stated interval. P<sub>s</sub> is the requested steering PWM count, with centre 365 and limits 290–440.</p><p class="method-note">These formulas apply when the required targets are available. The separately constrained local-fit fallback uses its fitted slope. PWM counts represent commands; wheel angle and physical speed were not measured.</p></article>
-        <article class="method-card"><span class="small-label">SAMPLED PIXEL DEVIATION · EQ. (5.1)</span><h3>Define a common evaluation reference</h3><div class="equation">c = (x<sub>L</sub> + x<sub>R</sub>) / 2<br>e = c − 80</div><p>At row y = 78, x<sub>L</sub> and x<sub>R</sub> are reviewed marking-centre coordinates. c is their midpoint, and e is its signed distance from the common image-centre convention x = 80, in pixels.</p><p class="method-note">Evaluation coordinates are reviewed separately from the controller’s target predictions. Negative e places the lane centre to the left. Marking gaps or ambiguous endpoints remain unmeasurable.</p></article>
-        <article class="method-card"><span class="small-label">STATISTICAL MEASURES · EQS. (5.2)–(5.4)</span><h3>Summarise measurable samples</h3><div class="equation">MSE = (1/n) ∑<sub>i=1</sub><sup>n</sup> e<sub>i</sub><sup>2</sup><br>RMSE = √MSE<br>MAE = (1/n) ∑<sub>i=1</sub><sup>n</sup> |e<sub>i</sub>|</div><p>n counts measurable sampled images in a run. MSE has units px²; RMSE and MAE have units px. The chart above reports per-run RMSE for the six selected runs.</p><p class="method-note">34 of 60 candidates are measurable. The 26 missing candidates are excluded without inserting zero errors. These statistics describe the measurable image subset and do not provide physical lateral distance or full-lap accuracy.</p></article>
+        <article class="method-card">
+          <span class="small-label">OPENCV / COLOUR AND GEOMETRY · §4.4</span><h3>Extract the marked lane</h3>
+          <p>The camera provides 160 × 120 images. HSV masks identify white and yellow markings. Boundary pairing checks width, continuity and dark road evidence before accepting a centre target.</p>
+          <div class="equation-block" aria-label="Equation 4.1, lane centre at image row r"><span class="equation-label">LANE CENTRE</span><div class="equation-row">
+            <math display="block"><mrow><msub><mi>x</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mi>y</mi></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>x</mi><mi>w</mi></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mrow></math><span class="equation-number">(4.1)</span>
+          </div></div>
+          <p class="method-note"><i>Definition</i><span><em>x<sub>y</sub></em> and <em>x<sub>w</sub></em> are the horizontal yellow and white marking positions at relative image height <em>r = y/H</em>. Their midpoint is measured in pixels.</span></p>
+        </article>
+
+        <article class="method-card model-card">
+          <span class="small-label">CNN / IMITATION LEARNING · §4.5</span><h3>Predict steering from demonstrations</h3>
+          <p>DonkeyCar KerasLinear learns from recorded camera images and driving commands. The preserved training record contains 39 epochs; the existing model is deployed in TensorFlow Lite format.</p>
+          <div class="model-flow" aria-label="Camera image passes through the CNN to produce a steering prediction"><span>Camera image</span><b>→</b><span>CNN</span><b>→</b><span>Steering prediction</span></div>
+          <p class="method-note"><i>Evidence boundary</i><span>Validation loss measures agreement with recorded examples; it does not establish lap completion or lane clearance. The comparison used a fixed throttle request of 0.375.</span></p>
+        </article>
+
+        <article class="method-card">
+          <span class="small-label">IMAGE-SPACE OFFSETS · EQ. (4.2)</span><h3>Measure near and far targets</h3>
+          <div class="equation-block" aria-label="Equation 4.2, normalized near and far image offsets"><span class="equation-label">NORMALIZED OFFSETS</span><div class="equation-row equation-system">
+            <math display="block"><mtable rowspacing=".75em"><mtr><mtd><msub><mi>e</mi><mi>n</mi></msub></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><msub><mi>x</mi><mi>c</mi></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mfrac><mi>W</mi><mn>2</mn></mfrac></mrow><mfrac><mi>W</mi><mn>2</mn></mfrac></mfrac></mtd></mtr><mtr><mtd><msub><mi>e</mi><mi>f</mi></msub></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><msub><mi>x</mi><mi>c</mi></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mi>f</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mfrac><mi>W</mi><mn>2</mn></mfrac></mrow><mfrac><mi>W</mi><mn>2</mn></mfrac></mfrac></mtd></mtr></mtable></math><span class="equation-number">(4.2)</span>
+          </div></div>
+          <p><em>W = 160 px</em>; <em>r<sub>n</sub> = 0.65</em> corresponds to <em>y = 78</em>, while <em>r<sub>f</sub> = 0.55</em> corresponds to <em>y = 66</em>.</p>
+          <p class="method-note"><i>Interpretation</i><span>The offsets are dimensionless. A positive value places the target to the right of the image centre.</span></p>
+        </article>
+
+        <article class="method-card wide-formula">
+          <span class="small-label">PREVIEW CONTROL · EQS. (4.3)–(4.5)</span><h3>Combine position and road direction</h3>
+          <div class="equation-stack" aria-label="Preview control equations 4.3 to 4.5">
+            <div class="equation-block"><span class="equation-label">ROAD DIRECTION TERM</span><div class="equation-row"><math display="block"><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><mo stretchy="false">(</mo><msub><mi>e</mi><mi>f</mi></msub><mo>−</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>×</mo><mn>0.10</mn></mrow><mrow><mn>0.65</mn><mo>−</mo><msub><mi>r</mi><mi>f</mi></msub></mrow></mfrac></mrow></math><span class="equation-number">(4.3)</span></div></div>
+            <div class="equation-block"><span class="equation-label">PREVIEW ERROR</span><div class="equation-row"><math display="block"><mrow><msub><mi>e</mi><mi>p</mi></msub><mo>=</mo><mi mathvariant="normal">clip</mi><mo stretchy="false">(</mo><msub><mi>e</mi><mi>n</mi></msub><mo>+</mo><mn>1.5</mn><mi>t</mi><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math><span class="equation-number">(4.4)</span></div></div>
+            <div class="equation-block"><span class="equation-label">STEERING REQUEST</span><div class="equation-row"><math display="block"><mrow><msub><mi>P</mi><mi>s</mi></msub><mo>=</mo><mi mathvariant="normal">round</mi><mo stretchy="false">[</mo><mn>365</mn><mo>−</mo><mn>75</mn><mo>×</mo><mi mathvariant="normal">clip</mi><mo stretchy="false">(</mo><mfrac><msub><mi>e</mi><mi>p</mi></msub><mn>0.5</mn></mfrac><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow></math><span class="equation-number">(4.5)</span></div></div>
+          </div>
+          <p>The preview term <em>t</em> lets farther road direction influence steering. <em>P<sub>s</sub></em> is the requested steering PWM count, with centre 365 and limits 290–440.</p>
+          <p class="method-note"><i>Evidence boundary</i><span>PWM counts are commands. Wheel angle and physical speed were not measured.</span></p>
+        </article>
+
+        <article class="method-card">
+          <span class="small-label">SAMPLED PIXEL DEVIATION · EQ. (5.1)</span><h3>Define a common evaluation reference</h3>
+          <div class="equation-block" aria-label="Equation 5.1, lane midpoint and signed image-centre error"><span class="equation-label">COMMON REFERENCE</span><div class="equation-row equation-system"><math display="block"><mtable rowspacing=".75em"><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><msub><mi>x</mi><mi>L</mi></msub><mo>+</mo><msub><mi>x</mi><mi>R</mi></msub></mrow><mn>2</mn></mfrac></mtd></mtr><mtr><mtd><mi>e</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi>c</mi><mo>−</mo><mn>80</mn></mtd></mtr></mtable></math><span class="equation-number">(5.1)</span></div></div>
+          <p>At row <em>y = 78</em>, <em>x<sub>L</sub></em> and <em>x<sub>R</sub></em> are reviewed marking-centre coordinates. The signed error <em>e</em> is measured in pixels.</p>
+          <p class="method-note"><i>Interpretation</i><span>Negative <em>e</em> places the lane centre to the left. Ambiguous samples remain unmeasurable.</span></p>
+        </article>
+
+        <article class="method-card statistics-card">
+          <span class="small-label">STATISTICAL MEASURES · EQS. (5.2)–(5.4)</span><h3>Summarise measurable samples</h3>
+          <div class="equation-stack compact" aria-label="Statistical equations 5.2 to 5.4">
+            <div class="equation-block"><div class="equation-row"><math display="block"><mrow><mi mathvariant="normal">MSE</mi><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msubsup><mi>e</mi><mi>i</mi><mn>2</mn></msubsup></mrow></math><span class="equation-number">(5.2)</span></div></div>
+            <div class="equation-block"><div class="equation-row"><math display="block"><mrow><mi mathvariant="normal">RMSE</mi><mo>=</mo><msqrt><mi mathvariant="normal">MSE</mi></msqrt></mrow></math><span class="equation-number">(5.3)</span></div></div>
+            <div class="equation-block"><div class="equation-row"><math display="block"><mrow><mi mathvariant="normal">MAE</mi><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo>|</mo><msub><mi>e</mi><mi>i</mi></msub><mo>|</mo></mrow></math><span class="equation-number">(5.4)</span></div></div>
+          </div>
+          <p><em>n</em> counts measurable sampled images. MSE has units px²; RMSE and MAE have units px.</p>
+          <p class="method-note"><i>Sample boundary</i><span>34 of 60 candidates are measurable. Missing candidates are excluded without inserting zero errors.</span></p>
+        </article>
       </div>
       <div class="caveat"><span>Control checks</span><p>Motion requires five consecutive valid, fresh frames. A target or freshness failure preserves a stop request. Image-age and control-update thresholds are 0.2 s and 0.25 s. The original OpenCV runner has a 16 s limit; the supplementary phone series uses a 30 s runner. These software requests depend on the actuator communication path.</p></div>
     </section>

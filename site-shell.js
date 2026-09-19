@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateProgress();
   window.addEventListener('scroll', updateProgress, { passive: true });
 
+  const readerPage = document.querySelector('.reader-shell');
+  if (!readerPage) return;
+
   const mail = document.createElement('a');
   mail.className = 'contact-float';
   mail.href = 'mailto:mark608041@gmail.com?subject=Lane%20Following%20Research%20Enquiry';
