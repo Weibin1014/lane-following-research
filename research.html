@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research questions, system architecture, methods, evidence, model and dataset documentation for a Raspberry Pi lane-following comparison.">
+  <title>Research Guide · Lane / Lab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b1620'/%3E%3Cpath d='M17 51 26 13M47 51 38 13' stroke='%23d8f667' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./research.css">
+</head>
+<body>
+  <a class="skip" href="#research">Skip to research guide</a>
+  <header class="site-header research-header"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span>LANE / LAB <small>Research guide</small></span></a><nav aria-label="Research guide navigation"><a href="#contribution">Contribution</a><a href="#architecture">System</a><a href="#pipeline">Methods</a><a href="#evidence">Evidence</a><a href="#reproduce">Reproduce</a></nav><a class="header-action" href="./index.html#results">← Results</a></header>
+
+  <main id="research">
+    <section class="research-hero">
+      <div><p class="overline">RESEARCH GUIDE · THESIS COMPANION</p><h1>The science behind<br><span>every recorded lap.</span></h1><p class="research-lede">A research-first explanation of how geometric machine vision and CNN imitation learning were implemented, deployed and evaluated on the same 1:16 scale Raspberry Pi vehicle.</p><div class="research-actions"><a class="button button-accent" href="#contribution">Read the contribution ↘</a><a class="text-link" href="./index.html#results">Open measured results →</a></div></div>
+      <aside class="claim-card"><span>DEFENSIBLE CONTRIBUTION</span><p>The work implements a geometric OpenCV controller, deploys a trained CNN predictor and documents a limited system-level comparison on one physical platform.</p><b>It does not claim a new neural architecture or general superiority across environments.</b></aside>
+    </section>
+
+    <section class="result-ribbon" aria-label="Research evidence summary"><a href="./index.html#results"><strong>3 / 3</strong><span>separately started OpenCV laps</span></a><a href="./index.html#results"><strong>5 + 5</strong><span>completed phone-timed trials</span></a><a href="./index.html#results"><strong>34 / 60</strong><span>measurable sampled frames</span></a><a href="./index.html#archive"><strong>Traceable</strong><span>reports, logs, code and media</span></a></section>
+
+    <section id="contribution" class="research-section">
+      <div class="research-heading"><p class="overline">01 / RESEARCH SCOPE</p><h2>What this study<br><span>set out to do.</span></h2><p>The objectives below come from the thesis. Each objective is paired with the evidence currently available on this website.</p></div>
+      <div class="objective-grid">
+        <article><span>01 · PLATFORM</span><h3>Integrate one physical system</h3><p>Use a Raspberry Pi, MIPI CSI camera and PCA9685 driver for onboard perception, steering and throttle requests.</p><a href="./deployment.html#assemble">Hardware and setup evidence →</a></article>
+        <article><span>02 · GEOMETRIC VISION</span><h3>Implement an OpenCV controller</h3><p>Extract coloured lane boundaries, estimate near and far targets and convert image-space geometry into steering commands.</p><a href="#pipeline">Explore the tested pipeline →</a></article>
+        <article><span>03 · IMITATION LEARNING</span><h3>Deploy a learned predictor</h3><p>Train a KerasLinear behavioural-cloning model from demonstrations and deploy its steering output through TensorFlow Lite.</p><a href="#model-card">Inspect the model card →</a></article>
+        <article><span>04 · EVALUATION</span><h3>Compare recorded outcomes</h3><p>Report completion, contacts, timing and sampled image-space deviation while separating measured facts from uncontrolled factors.</p><a href="#evidence">Audit the evidence →</a></article>
+      </div>
+    </section>
+
+    <section id="architecture" class="research-section architecture-section">
+      <div class="research-heading compact"><p class="overline">02 / SYSTEM ARCHITECTURE</p><h2>One vehicle.<br><span>Two perception paths.</span></h2><p>The physical platform is shared. The controller implementations and their recorded evidence differ.</p></div>
+      <div class="architecture-map" role="img" aria-label="Camera input branches to OpenCV and CNN perception, then passes through control and safety to PCA9685 and vehicle actuators while logging evidence">
+        <div class="arch-node input"><span>INPUT</span><b>OV5647 camera</b><small>160 × 120 · 20 Hz</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-branches"><div class="arch-node opencv"><span>PATH A</span><b>OpenCV geometry</b><small>HSV masks · boundary pairing · preview target</small></div><div class="arch-node cnn"><span>PATH B</span><b>CNN imitation learning</b><small>KerasLinear · TFLite · steering prediction</small></div></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node control"><span>CONTROL</span><b>Request + safety gate</b><small>freshness · lane loss · watchdog</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node output"><span>OUTPUT</span><b>PCA9685 + vehicle</b><small>steering channel 1 · throttle channel 0</small></div>
+        <div class="arch-log"><span>↓ EVIDENCE</span><p>Images · CSV · JSON · reports · videos · source snapshots</p></div>
+      </div>
+      <div class="system-notes"><article><b>Shared hardware reduces one source of variation.</b><p>It does not remove changes in battery state, lighting, starting pose or test order.</p></article><article><b>Commands are not physical measurements.</b><p>PWM counts describe requested actuator values; steering angle and vehicle speed were not calibrated in physical units.</p></article></div>
+    </section>
+
+    <section id="pipeline" class="research-section pipeline-section">
+      <div class="research-heading"><p class="overline">03 / INTERACTIVE METHOD</p><h2>From one frame<br><span>to one steering request.</span></h2><p>Select a stage to see its role, recorded configuration and connection to the experiment. The diagram describes the tested OpenCV path.</p></div>
+      <div class="pipeline-layout">
+        <div class="pipeline-list" role="tablist" aria-label="OpenCV pipeline stages">
+          <button class="pipeline-step active" role="tab" aria-selected="true" data-stage="capture"><span>01</span><b>Capture</b><small>camera frame</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="roi"><span>02</span><b>Region of interest</b><small>road area</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="segment"><span>03</span><b>HSV segmentation</b><small>white + yellow</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="pair"><span>04</span><b>Boundary pairing</b><small>lane evidence</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="target"><span>05</span><b>Target geometry</b><small>near + far</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="steer"><span>06</span><b>Steering request</b><small>preview control</small></button>
+          <button class="pipeline-step" role="tab" aria-selected="false" data-stage="gate"><span>07</span><b>Safety gate</b><small>start or stop</small></button>
+        </div>
+        <article class="stage-panel" aria-live="polite"><div class="stage-visual" id="stage-visual"><div class="camera-frame"><i></i><i></i><span></span></div></div><div class="stage-copy"><p id="stage-kicker">STAGE 01 · SENSOR INPUT</p><h3 id="stage-title">Capture a compact camera frame</h3><p id="stage-text">The Raspberry Pi camera supplies a 160 × 120 colour image. The small frame limits processing cost and defines the coordinate system used by every later calculation.</p><dl><div><dt>Recorded configuration</dt><dd id="stage-config">160 × 120 pixels · 20 Hz</dd></div><div><dt>Scientific boundary</dt><dd id="stage-limit">A frame is a sensor observation, not an independent measurement of physical lateral position.</dd></div></dl><a id="stage-link" href="./index.html#methods">See equations and evidence →</a></div></article>
+      </div>
+      <div class="theory-strip"><article><span>IMAGE COORDINATES</span><h3>Pixels define the reference</h3><p>The origin is at the upper-left; x increases rightward and y downward. For W = 160, the common image-centre convention is x = 80.</p></article><article><span>COLOUR SPACE</span><h3>HSV separates colour roles</h3><p>Hue represents colour family, saturation its intensity and value its brightness. Fixed ranges produce binary masks that still depend on lighting.</p></article><article><span>CLOSED LOOP</span><h3>Actions change future images</h3><p>A steering request changes the next camera view. Offline detection quality alone therefore cannot establish stable vehicle control.</p></article></div>
+    </section>
+
+    <section class="research-section comparison-section">
+      <div class="research-heading compact"><p class="overline">04 / METHOD COMPARISON</p><h2>Different mechanisms.<br><span>Common vehicle.</span></h2></div>
+      <div class="comparison-table-wrap"><table><thead><tr><th>Research dimension</th><th>OpenCV geometric controller</th><th>CNN imitation-learning controller</th></tr></thead><tbody><tr><td>Core mechanism</td><td>Explicit colour and geometric rules</td><td>Learned mapping from images to control prediction</td></tr><tr><td>Training requirement</td><td>No supervised training</td><td>Human driving demonstrations required</td></tr><tr><td>Interpretability</td><td>Masks, boundaries and targets can be inspected directly</td><td>Layer outputs are less directly interpretable</td></tr><tr><td>Configuration evidence</td><td>HSV ranges, target rows, preview formula and PWM mapping</td><td>Saved architecture, 39-epoch history, H5 and TFLite artifacts</td></tr><tr><td>Comparison control</td><td colspan="2">Same car and stated throttle request; battery state and test order were not matched quantitatively</td></tr><tr><td>Strongest observed result</td><td>Three separate complete laps and no contacts in the five listed phone trials</td><td>Five completed phone trials; mean 1.8 observed contacts per lap</td></tr><tr><td>What remains unknown</td><td colspan="2">Generalisation, physical lateral error, matched end-to-end latency and controlled robustness</td></tr></tbody></table></div>
+    </section>
+
+    <section id="evidence" class="research-section evidence-section">
+      <div class="research-heading"><p class="overline">05 / EVIDENCE MODEL</p><h2>Results are labelled by<br><span>what was actually tested.</span></h2><p>Higher stages require new evidence. Passing one stage does not automatically prove the next.</p></div>
+      <div class="evidence-ladder">
+        <article><span>01</span><div><b>Source inspection</b><p>Code and configuration exist.</p></div></article>
+        <article><span>02</span><div><b>Offline replay</b><p>Saved images produce inspectable masks and targets.</p></div></article>
+        <article><span>03</span><div><b>Camera-only validation</b><p>Fresh frames arrive without PWM output.</p></div></article>
+        <article><span>04</span><div><b>Static actuator validation</b><p>Direction, centre and stopping requests are checked with raised wheels.</p></div></article>
+        <article class="reached"><span>05</span><div><b>Closed-loop lap evidence</b><p>Three independent OpenCV laps and the listed comparison runs were recorded.</p></div></article>
+        <article class="pending"><span>06</span><div><b>Controlled comparative evidence</b><p>Still requires matched battery, order, timing, speed and expanded repetitions.</p></div></article>
+      </div>
+      <div class="evidence-columns"><article><span>MEASURED OR OBSERVED</span><ul><li>Completion of listed laps</li><li>Manual phone stopwatch times</li><li>Operator-recorded boundary contacts</li><li>Logged frame and target availability</li><li>Reviewed image-space sample coordinates</li></ul></article><article><span>NOT ESTABLISHED</span><ul><li>Physical lateral deviation in centimetres</li><li>Continuous physical vehicle speed</li><li>Matched camera-to-actuator latency</li><li>Independent blind ground truth</li><li>Performance across other tracks and lighting</li></ul></article></div>
+    </section>
+
+    <section id="model-card" class="research-section cards-section">
+      <div class="research-heading compact"><p class="overline">06 / MODEL + DATA DOCUMENTATION</p><h2>Artifacts with context,<br><span>not unexplained files.</span></h2></div>
+      <div class="documentation-grid">
+        <article class="doc-card"><div class="doc-card-head"><span>MODEL CARD</span><b>mypilot</b></div><dl><div><dt>Model family</dt><dd>DonkeyCar KerasLinear behavioural cloning</dd></div><div><dt>Input</dt><dd>120 × 160 × 3 image</dd></div><div><dt>Architecture</dt><dd>5 convolutional layers, 2 dense hidden layers, 2 scalar outputs</dd></div><div><dt>Training record</dt><dd>39 epochs; final loss ≈ 0.01295; final validation loss ≈ 0.01116</dd></div><div><dt>Deployment</dt><dd>mypilot.tflite · tflite_linear · DonkeyCar 5.3.0 · TFLite Runtime 2.14.0</dd></div><div><dt>Comparison use</dt><dd>Steering prediction with fixed normalized throttle 0.375</dd></div><div><dt>Limit</dt><dd>Validation loss is not lap success, clearance or detection accuracy</dd></div></dl></article>
+        <article class="doc-card"><div class="doc-card-head"><span>DATASET CARD</span><b>Driving demonstrations</b></div><dl><div><dt>Preserved scale</dt><dd>12,058 JPG frames with DonkeyCar recording files</dd></div><div><dt>Purpose</dt><dd>Supervised steering and throttle examples for behavioural cloning</dd></div><div><dt>Vehicle context</dt><dd>One 1:16 scale car on the indoor marked track</dd></div><div><dt>Available lineage</dt><dd>Training database, saved history, H5 and TFLite model artifacts</dd></div><div><dt>Known gap</dt><dd>Every data-cleaning decision is not independently reconstructed</dd></div><div><dt>Split limitation</dt><dd>Configured validation does not prove separation of adjacent camera frames</dd></div><div><dt>Use boundary</dt><dd>The archive supports this deployment record, not broad environmental generalisation</dd></div></dl></article>
+      </div>
+    </section>
+
+    <section id="reproduce" class="research-section reproduce-section">
+      <div class="research-heading"><p class="overline">07 / REPRODUCIBILITY</p><h2>Choose the depth<br><span>of reproduction.</span></h2></div>
+      <div class="reproduce-grid"><article><span>LEVEL A</span><h3>Read and audit</h3><p>Inspect the English reports, original records, chart data and declared limitations.</p><a href="./downloads/01-key-findings.zip">Download Key Findings ↓</a></article><article><span>LEVEL B</span><h3>Replay and inspect</h3><p>Run public source code on saved images and compare intermediate visual outputs.</p><a href="./downloads/03-source-code.zip">Download Source Code ↓</a></article><article><span>LEVEL C</span><h3>Rebuild the platform</h3><p>Prepare Raspberry Pi hardware, verify the camera, calibrate actuators and follow staged safety gates.</p><a href="./deployment.html">Open Beginner Setup →</a></article><article><span>LEVEL D</span><h3>Repeat the experiment</h3><p>Use the same measurement definitions, retain every attempt and add matched battery, order and timing controls.</p><a href="./index.html#archive">Search complete archive →</a></article></div>
+      <div class="version-boundary"><b>Version boundary</b><p>The archived CNN deployment used DonkeyCar 5.3.0 and TensorFlow Lite Runtime 2.14.0. Current DonkeyCar documentation is a conceptual and setup reference; current commands may not reproduce the archived environment unchanged.</p></div>
+    </section>
+
+    <section class="research-section references-section">
+      <div class="research-heading compact"><p class="overline">08 / EXTERNAL FOUNDATIONS</p><h2>Official references<br><span>used for context.</span></h2><p>These sources explain general methods. Project-specific claims remain tied to the experiment archive and thesis evidence.</p></div>
+      <div class="reference-grid"><a href="https://docs.donkeycar.com/"><span>DONKEYCAR</span><b>Platform, calibration and behavioural-cloning workflow</b></a><a href="https://docs.duckietown.com/ente/duckietown-manual/40-demonstrations/lane-following-lf.html"><span>DUCKIETOWN</span><b>Lane-following pipeline, visualisation and tuning</b></a><a href="https://docs.opencv.org/4.x/d7/da8/tutorial_table_of_content_imgproc.html"><span>OPENCV</span><b>Colour conversion, thresholding and morphology</b></a><a href="https://www.tensorflow.org/responsible_ai/model_card_toolkit/api_docs/python/model_card_toolkit/ModelCardToolkit"><span>TENSORFLOW</span><b>Model-card documentation structure</b></a><a href="https://f1tenth-doc.readthedocs.io/en/latest/"><span>F1TENTH</span><b>Research and laboratory learning structure</b></a><a href="https://www.raspberrypi.com/documentation/"><span>RASPBERRY PI</span><b>Operating system, camera and interface setup</b></a></div>
+    </section>
+
+    <section class="research-section glossary-section">
+      <div class="research-heading compact"><p class="overline">09 / GLOSSARY</p><h2>Terms used in<br><span>the research record.</span></h2></div>
+      <label class="glossary-search"><span>Search terms</span><input id="glossary-input" type="search" placeholder="Try: PWM, RMSE, watchdog…"></label>
+      <div class="glossary-grid" id="glossary-grid">
+        <article data-term="behavioural cloning imitation learning"><b>Behavioural cloning</b><p>Supervised learning that predicts control commands from examples of human driving.</p></article><article data-term="closed loop feedback"><b>Closed loop</b><p>A control process in which each action changes the future sensor observations used by the controller.</p></article><article data-term="hsv hue saturation value"><b>HSV</b><p>A colour representation separating hue, saturation and brightness for threshold-based segmentation.</p></article><article data-term="i2c bus pca9685"><b>I²C</b><p>A serial communication bus used here between the Raspberry Pi and PCA9685.</p></article><article data-term="mae mean absolute error"><b>MAE</b><p>The mean absolute magnitude of measured errors, reported in pixels for the reviewed image samples.</p></article><article data-term="pwm pulse width modulation"><b>PWM request</b><p>A numerical actuator request. In this study it is not a measured steering angle or vehicle speed.</p></article><article data-term="rmse root mean squared error"><b>RMSE</b><p>The square root of mean squared error, reported in pixels for measurable sampled frames.</p></article><article data-term="roi region interest"><b>ROI</b><p>The selected image region used for road and lane processing.</p></article><article data-term="stale frame freshness"><b>Stale frame</b><p>A camera frame whose age exceeds the controller's accepted freshness threshold.</p></article><article data-term="tflite tensorflow lite inference"><b>TensorFlow Lite</b><p>A deployment runtime and model format used for the preserved CNN predictor.</p></article><article data-term="validation loss"><b>Validation loss</b><p>Agreement with held-out demonstration targets; it is not a percentage of successful laps.</p></article><article data-term="watchdog timeout safety"><b>Watchdog</b><p>A separate timing check that requests stopping when control updates do not arrive in time.</p></article>
+      </div><p id="glossary-empty" hidden>No matching term.</p>
+    </section>
+  </main>
+
+  <footer><div><span class="footer-brand">LANE / LAB</span><p>Research methods, evidence and reproducibility</p></div><div><a href="./index.html#results">Results</a><a href="./deployment.html">Setup guide</a><a href="#research">Back to top ↑</a></div></footer>
+  <script src="./research.js"></script>
+</body>
+</html>

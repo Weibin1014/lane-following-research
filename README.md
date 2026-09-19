@@ -8,6 +8,8 @@ The catalogue retains original experiment paths and descriptive labels. Identica
 
 All 46 Markdown reports that contain Chinese have an English reading edition with one-click original-source switching. The three principal reports use prepared, evidence-preserving English editions; the remaining editions are clearly marked as machine translated. No live translation service is connected.
 
+`research.html` is the research companion to the results-first home page. It connects the thesis objectives to the system architecture, interactive OpenCV pipeline, comparison design, evidence levels, CNN model card, dataset card, reproducibility paths and glossary. General theory links to official external documentation; project claims remain tied to the thesis and archived records.
+
 ## Downloads and setup
 
 The website Download Center provides four focused packages instead of requiring visitors to choose among thousands of archive files:
