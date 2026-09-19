@@ -23,14 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify(payload)
         });
-        if (!response.ok) throw new Error(`Submission failed (${response.status})`);
+        const result = await response.json().catch(() => ({}));
+        const delivered = response.ok && (result.success === true || result.success === 'true');
+        if (!delivered) {
+          const needsActivation = /activat/i.test(result.message || '');
+          const error = new Error(result.message || `Submission failed (${response.status})`);
+          error.userMessage = needsActivation
+            ? 'This form is awaiting one-time email activation. The researcher has been notified; please try again after activation.'
+            : 'The form service did not accept the message. Please try again in a few minutes.';
+          throw error;
+        }
 
         form.reset();
         status.className = 'form-status is-success';
         status.textContent = 'Thank you. Your enquiry has been sent to Zhang Weibin.';
       } catch (error) {
         status.className = 'form-status is-error';
-        status.textContent = 'The message could not be sent. Please check your connection and try again.';
+        status.textContent = error.userMessage || 'The message could not be sent. Please check your connection and try again.';
       } finally {
         submit.disabled = false;
         submit.innerHTML = originalLabel;
