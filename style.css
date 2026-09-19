@@ -49,3 +49,9 @@
 .form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 @media(max-width:760px){.brand{gap:9px}.brand-symbol{width:31px;height:31px}.brand-wordmark b{font-size:12px}.brand-wordmark small{max-width:120px;font-size:7px}.contact-form{grid-template-columns:1fr}.form-wide{grid-column:1}.form-submit{grid-template-columns:1fr}.form-submit button{width:100%}}
 @media(max-width:900px){.site-header nav{display:none}}
+
+@media(min-width:901px) and (max-width:1180px){
+  .contact-section{grid-template-columns:minmax(280px,.82fr) minmax(500px,1.18fr);gap:52px}
+  .contact-section .form-submit{grid-template-columns:1fr}
+  .contact-section .form-submit button{width:100%}
+}

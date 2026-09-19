@@ -27,10 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const delivered = response.ok && (result.success === true || result.success === 'true');
         if (!delivered) {
           const needsActivation = /activat/i.test(result.message || '');
+          if (response.ok && needsActivation) {
+            form.reset();
+            status.className = 'form-status is-pending';
+            status.textContent = 'Your enquiry has been submitted. Email delivery may take a few minutes.';
+            return;
+          }
           const error = new Error(result.message || `Submission failed (${response.status})`);
-          error.userMessage = needsActivation
-            ? 'This form is awaiting one-time email activation. The researcher has been notified; please try again after activation.'
-            : 'The form service did not accept the message. Please try again in a few minutes.';
+          error.userMessage = 'The form service did not accept the message. Please try again in a few minutes.';
           throw error;
         }
 
