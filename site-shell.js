@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
     if (target) {
       const alignTarget = () => target.scrollIntoView({ block: 'start' });
+      const archiveList = document.getElementById('file-list');
+      if (archiveList && 'MutationObserver' in window) {
+        const archiveObserver = new MutationObserver(() => window.requestAnimationFrame(alignTarget));
+        archiveObserver.observe(archiveList, { childList: true });
+        window.setTimeout(() => archiveObserver.disconnect(), 15000);
+      }
       window.addEventListener('load', () => {
         alignTarget();
         window.setTimeout(alignTarget, 500);
