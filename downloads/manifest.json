@@ -1,14 +1,18 @@
 [
   {
     "file": "01-key-findings.zip",
-    "bytes": 18751
+    "bytes": 21318
   },
   {
     "file": "02-experiment-data.zip",
-    "bytes": 12451
+    "bytes": 14835
   },
   {
     "file": "03-source-code.zip",
-    "bytes": 15499
+    "bytes": 18048
+  },
+  {
+    "file": "04-beginner-setup-kit.zip",
+    "bytes": 25441
   }
 ]

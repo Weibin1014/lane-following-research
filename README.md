@@ -10,12 +10,13 @@ All 46 Markdown reports that contain Chinese have an English reading edition wit
 
 ## Downloads and setup
 
-The website Download Center provides three small, curated packages instead of requiring visitors to choose among thousands of archive files:
+The website Download Center provides four focused packages instead of requiring visitors to choose among thousands of archive files:
 
 - `01-key-findings.zip` for first-time readers
 - `02-experiment-data.zip` for JSON/CSV analysis
 - `03-source-code.zip` for the public Python programs
+- `04-beginner-setup-kit.zip` for Raspberry Pi setup, copyable checks, calibration helpers and the archived bounded runner
 
-Each package contains a file-by-file README and `DEPLOYMENT_GUIDE.md`. The same guide is available as a formatted webpage at `deployment.html`; it covers report usage, offline vision testing, Raspberry Pi preparation, local website preview, and GitHub Pages deployment.
+The first three packages contain a file-by-file README and `DEPLOYMENT_GUIDE.md`. The formatted guide at `deployment.html` starts with a blank SD card and covers assembly, wiring, Raspberry Pi OS, camera-only checks, calibration and staged driving. The same beginner materials are available in `beginner-kit/` for direct preview and copying.
 
 Full thesis documents, device backup archives, original MOV videos, presentation builds and bundled third-party dependencies are excluded. The complete original local archive has more records than this package. No licence for code, data or models is assigned by this package; publication does not imply permission for reuse.
