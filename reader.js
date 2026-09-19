@@ -4,6 +4,7 @@ const contextNode = document.querySelector('#document-context');
 const bodyNode = document.querySelector('#reader-body');
 const noticeNode = document.querySelector('#reader-notice');
 const rawLink = document.querySelector('#raw-link');
+const englishDownload = document.querySelector('#english-download');
 const copyButton = document.querySelector('#copy-code');
 const copyStatus = document.querySelector('#copy-status');
 const archive = window.ArchiveUI;
@@ -131,12 +132,17 @@ async function load() {
     if (extension === 'md') {
       bodyNode.innerHTML = markdown(sourceText, item.path);
       const status = document.querySelector('#translation-status');
+      const containsChinese = /[\u4e00-\u9fff]/.test(sourceText);
+      if (containsChinese) rawLink.textContent = 'Download original Chinese source ↓';
       if (/[\u4e00-\u9fff]/.test(sourceText)) {
         const translations = await fetch('./translations/index.json').then(r => r.json());
         const edition = translations[item.path];
         status.hidden = false;
         if (edition) {
           const englishText = await fetch(edition.file).then(r => { if (!r.ok) throw new Error('English edition unavailable'); return r.text(); });
+          englishDownload.hidden = false;
+          englishDownload.href = edition.file;
+          englishDownload.download = `${item.path.split('/').at(-1).replace(/\.md$/i, '')}-EN.md`;
           const englishHeading = englishText.match(/^#\s+(.+)$/m)?.[1];
           if (englishHeading) {
             titleNode.textContent = englishHeading;

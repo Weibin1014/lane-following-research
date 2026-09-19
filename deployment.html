@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deployment and usage guide for the lane-following research downloads, Python code, Raspberry Pi setup, and GitHub Pages website.">
+  <title>Deployment & Usage Guide · Lane / Lab</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./guide.css">
+</head>
+<body>
+  <a class="skip" href="#guide">Skip to guide</a>
+  <header class="site-header reader-header"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span>LANE / LAB <small>Research archive</small></span></a><a class="header-action" href="./index.html#downloads">← Back to downloads</a></header>
+  <main id="guide" class="guide-shell">
+    <header class="guide-hero"><p class="overline">DEPLOYMENT & USAGE GUIDE</p><h1>Download with confidence.<br><span>Start without guesswork.</span></h1><p>Choose the right package, inspect the research files, run vision code without vehicle motion, prepare a Raspberry Pi, or publish a copy of this website.</p><a class="guide-download" href="./downloads/DEPLOYMENT_GUIDE.md" download>Download this guide (.md) ↓</a></header>
+    <nav class="guide-nav" aria-label="Guide contents"><a href="#choose">1. Choose</a><a href="#read">2. Read</a><a href="#offline">3. Offline test</a><a href="#raspberry-pi">4. Raspberry Pi</a><a href="#website">5. Website</a><a href="#limits">6. Limits</a></nav>
+    <section id="choose" class="guide-section"><span class="guide-step">01</span><div><h2>Choose a package</h2><div class="choice-grid"><article><b>Key Findings</b><p>Best first download. Core conclusions, original reports, English editions and chart data.</p></article><article><b>Experiment Data</b><p>JSON and CSV files for timing and sampled pixel analysis.</p></article><article><b>Source Code</b><p>Six public Python programs with a file-by-file README.</p></article></div></div></section>
+    <section id="read" class="guide-section"><span class="guide-step">02</span><div><h2>Read reports and data</h2><ol><li>Extract the ZIP and open <code>README.md</code> first.</li><li>Open Markdown in VS Code, Typora, GitHub or a text editor.</li><li>Open JSON/CSV in Python, Excel, LibreOffice or a data editor.</li><li>Use English editions for reading and the original Chinese record for exact wording.</li></ol></div></section>
+    <section id="offline" class="guide-section"><span class="guide-step">03</span><div><h2>Run an offline vision test first</h2><p>The lane-detection program can process an image without importing the PWM vehicle driver.</p><pre><code>mkdir lane-following-source
+unzip 03-source-code.zip -d lane-following-source
+cd lane-following-source
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install opencv-python numpy
+python python/opencv_lane_detection.py \
+  --input /path/to/track-image.jpg \
+  --output lane-debug.jpg --no-display</code></pre><p class="guide-callout">The thresholds were tuned for this project. Different cameras, tracks and lighting normally require recalibration.</p></div></section>
+    <section id="raspberry-pi" class="guide-section"><span class="guide-step">04</span><div><h2>Prepare Raspberry Pi hardware</h2><p>The vehicle program expects OpenCV, NumPy, Picamera2 and a PCA9685 at I2C bus 1, address <code>0x40</code>.</p><pre><code>sudo apt update
+sudo apt install -y python3-venv python3-opencv \
+  python3-numpy python3-picamera2 i2c-tools
+python3 -m venv --system-site-packages .venv
+source .venv/bin/activate
+python -m pip install Adafruit-PCA9685
+i2cdetect -y 1</code></pre><div class="safety-box"><strong>Before vehicle motion</strong><p><code>opencv_drive_car.py</code> initializes PWM and can request forward throttle after its three-second countdown. Test the camera and offline detector first. Verify channel mapping, steering centre, stop PWM and direction with drive wheels raised and a physical power disconnect available.</p></div></div></section>
+    <section id="website" class="guide-section"><span class="guide-step">05</span><div><h2>Preview or publish the website</h2><h3>Local preview</h3><pre><code>git clone https://github.com/Weibin1014/lane-following-research.git
+cd lane-following-research
+python3 -m http.server 8000</code></pre><p>Open <code>http://localhost:8000</code>. Stop the server with <code>Ctrl+C</code>.</p><h3>GitHub Pages</h3><ol><li>Fork the repository or upload it to a new repository.</li><li>Open <strong>Settings → Pages</strong>.</li><li>Choose <strong>Deploy from a branch</strong>.</li><li>Select <code>main</code> and <code>/ (root)</code>, then save.</li><li>Wait for the Pages workflow to finish and use the URL shown by GitHub.</li></ol></div></section>
+    <section id="limits" class="guide-section"><span class="guide-step">06</span><div><h2>Read the evidence limits</h2><ul><li>The public downloads do not include the full thesis.</li><li>Phone timing was manual and the method order was not randomized.</li><li>Pixel statistics cover measurable sampled frames, not physical lateral distance.</li><li>Thresholds and PWM values require calibration before use on different hardware.</li></ul></div></section>
+  </main>
+  <footer><div><span class="footer-brand">LANE / LAB</span><p>Deployment and usage guide</p></div><div><a href="#guide">Back to top ↑</a></div></footer>
+</body>
+</html>

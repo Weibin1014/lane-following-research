@@ -113,7 +113,7 @@ Promise.all([
 function prepareMotion() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('motion-ready');
-  const targets = document.querySelectorAll('.section-head, .result-grid article, .chart-panel, .findings, .method-card, .timeline article, .video-card, .code-section>*, .archive-controls, .archive-meta');
+  const targets = document.querySelectorAll('.section-head, .result-grid article, .chart-panel, .findings, .method-card, .timeline article, .video-card, .code-section>*, .download-card, .deployment-callout, .archive-controls, .archive-meta');
   targets.forEach((node, index) => {
     node.dataset.reveal = '';
     node.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
