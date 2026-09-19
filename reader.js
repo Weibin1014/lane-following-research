@@ -137,6 +137,11 @@ async function load() {
         status.hidden = false;
         if (edition) {
           const englishText = await fetch(edition.file).then(r => { if (!r.ok) throw new Error('English edition unavailable'); return r.text(); });
+          const englishHeading = englishText.match(/^#\s+(.+)$/m)?.[1];
+          if (englishHeading) {
+            titleNode.textContent = englishHeading;
+            document.title = `${englishHeading} · Lane / Lab`;
+          }
           const controls = document.querySelector('#language-switch');
           controls.hidden = false;
           controls.style.display = 'flex';
@@ -144,9 +149,13 @@ async function load() {
           const original = document.querySelector('#original-version');
           function setLanguage(isEnglish) {
             bodyNode.innerHTML = markdown(isEnglish ? englishText : sourceText, item.path);
+            document.documentElement.lang = isEnglish ? 'en' : 'zh-CN';
             english.setAttribute('aria-pressed', String(isEnglish));
             original.setAttribute('aria-pressed', String(!isEnglish));
             status.textContent = isEnglish ? edition.note : 'Unmodified Chinese source. Switch to the English edition for the research findings.';
+            if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              bodyNode.animate([{opacity:.35, transform:'translateY(5px)'},{opacity:1, transform:'translateY(0)'}], {duration:220, easing:'ease-out'});
+            }
           }
           english.addEventListener('click', () => setLanguage(true));
           original.addEventListener('click', () => setLanguage(false));

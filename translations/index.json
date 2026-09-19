@@ -1,1 +1,232 @@
-{"reports/OpenCV阶段总结_2026-09-07至09-08.md": {"file": "./translations/report-1.md", "kind": "English reading edition", "note": "Evidence-preserving English reading edition. The stage report is reorganised and condensed; consult the original for its full archival checklist."}, "experiment_data/2026-09-09/phone_timing/phone_comparison_report.md": {"file": "./translations/report-2.md", "kind": "English reading edition", "note": "English reading edition preserving the reported values and limitations. Original source remains available."}, "reports/pixel_evaluation_2026-09-12/像素偏差评价_复核后汇总.md": {"file": "./translations/report-3.md", "kind": "English reading edition", "note": "English reading edition preserving the reported values and limitations. Original source remains available."}}
+{
+  "reports/OpenCV阶段总结_2026-09-07至09-08.md": {
+    "file": "./translations/report-1.md",
+    "kind": "English reading edition",
+    "note": "Evidence-preserving English reading edition. The stage report is reorganised and condensed; consult the original for its full archival checklist."
+  },
+  "experiment_data/2026-09-09/phone_timing/phone_comparison_report.md": {
+    "file": "./translations/report-2.md",
+    "kind": "English reading edition",
+    "note": "English reading edition preserving the reported values and limitations. Original source remains available."
+  },
+  "reports/pixel_evaluation_2026-09-12/像素偏差评价_复核后汇总.md": {
+    "file": "./translations/report-3.md",
+    "kind": "English reading edition",
+    "note": "English reading edition preserving the reported values and limitations. Original source remains available."
+  },
+  "experiment_data/2026-09-07/README.md": {
+    "file": "./translations/auto-06686a1148a8.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiment_data/2026-09-09/audit/report_before_timing_consolidation.md": {
+    "file": "./translations/auto-03489d044095.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/autonomous_comparison_report.md": {
+    "file": "./translations/auto-6c9bf8d63718.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/continuous_comparison/REPORT.md": {
+    "file": "./translations/auto-b2d9178357ce.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/dense_ambiguity_diagnosis.md": {
+    "file": "./translations/auto-414afec93334.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/dense_report.md": {
+    "file": "./translations/auto-785f17a52da0.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/dense_sampling_diagnosis.md": {
+    "file": "./translations/auto-b957fc073b07.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/edge_report.md": {
+    "file": "./translations/auto-3c7a924f47e7.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/exit_5s_report.md": {
+    "file": "./translations/auto-a6ac389fc85c.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/first_complete_lap_20260908.md": {
+    "file": "./translations/auto-9e37d2929839.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/heldout_319_report.md": {
+    "file": "./translations/auto-1cf725bc79a0.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/heldout_rejection_analysis.md": {
+    "file": "./translations/auto-92135b6fe4de.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/independent_report.md": {
+    "file": "./translations/auto-24607c616db0.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/local_8s_review.md": {
+    "file": "./translations/auto-e0ac4b1e41aa.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/local_geometry_report.md": {
+    "file": "./translations/auto-cfc8db2ab368.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/local_heldout_320_report.md": {
+    "file": "./translations/auto-af0348b8d20e.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/near_heading_comparison.md": {
+    "file": "./translations/auto-828effadb65d.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/paths_report.md": {
+    "file": "./translations/auto-11fd32ca0b0b.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/quadratic_report.md": {
+    "file": "./translations/auto-3fc00f423ac8.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/README.md": {
+    "file": "./translations/auto-57ecd239b0f9.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/second_curve_local_three_runs_report.md": {
+    "file": "./translations/auto-c604b7f0cc1b.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/second_curve_regression/README.md": {
+    "file": "./translations/auto-2d13d6423ff9.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/second_curve_window_failure.md": {
+    "file": "./translations/auto-4e825cf3ded2.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/second_curve_yellow_diagnosis.md": {
+    "file": "./translations/auto-b7112bfa134c.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/straight_thin_regression.md": {
+    "file": "./translations/auto-fc3a2d9954f5.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/thin_report.md": {
+    "file": "./translations/auto-e61cc852c533.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/third_run_diagnosis.md": {
+    "file": "./translations/auto-6c7e0d6f79ab.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/three_complete_laps_20260908.md": {
+    "file": "./translations/auto-529f5e77028b.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/three_thin_runs_report.md": {
+    "file": "./translations/auto-0a0b2cabf463.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/transition_8s_report.md": {
+    "file": "./translations/auto-fe0617006d94.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/visual_reference/review.md": {
+    "file": "./translations/auto-25c628ce7f4e.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/width_report.md": {
+    "file": "./translations/auto-109fee2007da.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "experiments/s2_curve_audit_20260908/window_report.md": {
+    "file": "./translations/auto-fbd5268c74bc.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/CNN_OpenCV对照核查_2026-09-09.md": {
+    "file": "./translations/auto-ec5bd4697332.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_CNN_01R1_sample6_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-a2b832ca83cd.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_CNN_02R1_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-6e41ea9e38c3.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_CNN_03_white_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-7226dc4b52dc.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_OpenCV_01R1_white_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-4af69d2b67b2.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_OpenCV_02_white_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-b5b805c9b771.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/before_OpenCV_03_white_correction/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-ee4ffc365893.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/pixel_evaluation_2026-09-12/像素偏差评价_初稿.md": {
+    "file": "./translations/auto-34b63b28d37e.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/实验进度_2026-09-09.md": {
+    "file": "./translations/auto-5a87d02c5af0.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  },
+  "reports/论文剩余补充清单_2026-09-09.md": {
+    "file": "./translations/auto-caa8ebd60e7c.md",
+    "kind": "Machine-translated English edition",
+    "note": "Machine-translated English reading edition. Use Original Chinese when exact wording matters."
+  }
+}

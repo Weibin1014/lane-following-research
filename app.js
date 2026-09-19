@@ -1,4 +1,4 @@
-const state = { records: [], filtered: [], page: 0, pageSize: 40 };
+const state = { records: [], filtered: [], page: 0, pageSize: 40, translations: new Set() };
 const search = document.querySelector('#search');
 const kind = document.querySelector('#kind');
 const list = document.querySelector('#file-list');
@@ -58,6 +58,13 @@ function render() {
     sub.className = 'file-path';
     sub.textContent = item.path;
     title.append(sub);
+    if (state.translations.has(item.path)) {
+      const badge = document.createElement('span');
+      badge.className = 'translation-badge';
+      badge.textContent = 'EN';
+      badge.title = 'English reading edition available';
+      title.append(badge);
+    }
     const type = document.createElement('span');
     type.className = 'file-kind';
     type.textContent = ({data:'Data',code:'Code',report:'Report',media:'Media',backup:'Backup'})[item.kind] || item.kind;
@@ -91,12 +98,34 @@ kind.addEventListener('change', filter);
 prev.addEventListener('click', () => { state.page--; render(); });
 next.addEventListener('click', () => { state.page++; render(); });
 
-fetch('./catalog.json')
-  .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
-  .then(records => { archive.register(records); state.records = records; state.filtered = [...records].sort(order); render(); })
+Promise.all([
+  fetch('./catalog.json').then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+  fetch('./translations/index.json').then(response => response.ok ? response.json() : {})
+])
+  .then(([records, translations]) => { archive.register(records); state.records = records; state.translations = new Set(Object.keys(translations)); state.filtered = [...records].sort(order); render(); })
   .catch(() => {
     count.textContent = 'The file index could not load';
     list.innerHTML = '<p class="file-empty">The research index is unavailable. Please reload this page.</p>';
     pageInfo.textContent = '';
     prev.disabled = next.disabled = true;
   });
+
+function prepareMotion() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('motion-ready');
+  const targets = document.querySelectorAll('.section-head, .result-grid article, .chart-panel, .findings, .method-card, .timeline article, .video-card, .code-section>*, .archive-controls, .archive-meta');
+  targets.forEach((node, index) => {
+    node.dataset.reveal = '';
+    node.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -6%'});
+  targets.forEach(node => observer.observe(node));
+}
+
+prepareMotion();

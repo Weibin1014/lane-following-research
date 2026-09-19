@@ -1,0 +1,11 @@
+# Local center/direction fitting: development results
+
+Fitting the local center position and direction directly from the current reliable yellow-white pairing does not require the existence of fixed far targets and does not require historical frames. At least 3 points, span at least 5%, fitting residual ≤1.5 pixels; near position standard error estimate ≤1.5 pixels, direction propagation to PWM uncertainty estimate ≤8. The error index is based on a linear model and a 0.5 pixel noise lower limit, which cannot cover system deviations and is not a guarantee of physical accuracy.
+
+Substantial differences from the old rules: allow extrapolation of up to 5% image height (6 pixels) of near targets, abandon the old 15% paired span threshold, and replace it with local geometry and uncertainty checks. The new estimates do not allow for the introduction of saturation turns. Competition paths must still be consistent, and width and dark pavement rules remain. You cannot claim to only optimize the code without changing the acceptance conditions.
+
+Development sequences 320/320 and 319/319 are both valid outputs and do not use timing. The near target checked frame falls in the coarse vision interval; 3 consecutive frames require 3, 3, and 6 pixel extrapolation. The independent evaluation conclusion of the original frozen candidate in the second paragraph 308/319 is retained. A new version has been developed using this paragraph and requires new unseen data for verification.
+
+All 2071 saved images are relative to the paths baseline: 1893 remain valid, 101 are restored to valid, and 77 remain unavailable; all 29 ground negative samples are unavailable. Because the baseline valid output is retained directly, its positioning accuracy cannot be considered verified. The maximum adjacent PWM changes in the first and second segments are 7 and 14.
+
+Tests passed: normal local fit, insufficient points rejection, over extrapolation rejection, nonlinear residual rejection, bright interior rejection, candidate overlimit rejection. The code has not been deployed and driven. The next step is to replay it offline on Raspberry Pi to confirm the consistency and time consumption; sequence verification is also required.
