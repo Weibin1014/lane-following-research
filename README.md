@@ -22,3 +22,8 @@ The website Download Center provides four focused packages instead of requiring 
 The first three packages contain a file-by-file README and `DEPLOYMENT_GUIDE.md`. The formatted guide at `deployment.html` starts with a blank SD card and covers assembly, wiring, Raspberry Pi OS, camera-only checks, calibration and staged driving. The same beginner materials are available in `beginner-kit/` for direct preview and copying.
 
 Full thesis documents, device backup archives, original MOV videos, presentation builds and bundled third-party dependencies are excluded. The complete original local archive has more records than this package. No licence for code, data or models is assigned by this package; publication does not imply permission for reuse.
+
+
+## Contact
+
+Research and implementation questions may be sent to Zhang Weibin at [mark608041@gmail.com](mailto:mark608041@gmail.com).
