@@ -36,7 +36,7 @@
         <div class="hero-actions"><a class="button button-accent" href="#results">Explore results <span>↗</span></a><a class="text-link" href="#archive">Search the archive <span>→</span></a></div>
         <div class="hero-facts" aria-label="Project overview"><div><strong>03</strong><span>independent OpenCV laps</span></div><div><strong>05 + 05</strong><span>phone-timed completed laps</span></div><div><strong>02</strong><span>demonstration videos</span></div></div>
       </div>
-      <div class="hero-visual"><img src="./media/track.jpg" alt="Indoor lane-following test track"><div class="visual-caption"><span>FIG. 01 / TEST TRACK</span><span>Actual experiment setting</span></div><div class="hero-orbit" aria-hidden="true"><span>CV</span><span>AI</span></div></div>
+      <div class="hero-visual"><img src="./media/track.jpg" alt="Indoor lane-following test track"><div class="visual-caption"><span>FIG. 01 / TEST TRACK</span><span>Actual experiment setting</span></div></div>
     </section>
 
     <div class="ticker" aria-label="Research workflow"><span>CAMERA INPUT</span><b>↗</b><span>LANE DETECTION</span><b>↗</b><span>STEERING CONTROL</span><b>↗</b><span>EVIDENCE & REVIEW</span></div>
@@ -54,7 +54,6 @@
         <article class="chart-panel"><div class="chart-heading"><div><p class="overline">PIXEL ERROR / RMSE</p><h3>Measurable sampled frames</h3></div><span>34 / 60 frames</span></div><div id="pixel-chart" class="chart-content" role="img" aria-label="Bar chart of RMSE in pixels for six sampled runs">Loading pixel evaluation…</div><p class="chart-note">Five to seven measurable frames per run; 26 sampled frames were excluded as unmeasurable, not scored as zero.</p><a href="./reader.html?file=reports%2Fpixel_evaluation_2026-09-12%2F%E5%83%8F%E7%B4%A0%E5%81%8F%E5%B7%AE%E8%AF%84%E4%BB%B7_%E5%A4%8D%E6%A0%B8%E5%90%8E%E6%B1%87%E6%80%BB.md">Source: reviewed evaluation ↗</a></article>
       </div>
       <div class="findings"><h3>Evidence-based conclusions</h3><ul><li><strong>Completed-lap evidence:</strong> three separate OpenCV runs on 8 September finished a lap within the configured 16-second test window.</li><li><strong>Descriptive comparison:</strong> all five listed runs per method on 9 September completed a lap. The operator recorded no line contacts for OpenCV and a mean of 1.8 contacts per CNN lap under those test conditions.</li><li><strong>Sampled image error:</strong> OpenCV had lower RMSE values in the measurable samples, but the sample is small, missing frames are not random, and no physical lateral error was measured.</li></ul></div>
-      <div class="caveat"><span>Interpretation</span><p>Sequential order, battery replacement and manual timing limit speed comparisons. Pixel marks were AI-assisted initially and visually reviewed by the operator; they are not independent blind ground truth. The demonstration videos are not precisely linked to every control log.</p></div>
     </section>
 
 
