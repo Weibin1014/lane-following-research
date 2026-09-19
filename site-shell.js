@@ -14,6 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
   updateProgress();
   window.addEventListener('scroll', updateProgress, { passive: true });
 
+  // Dynamic archive content changes the page height after the browser's first
+  // hash jump. Re-align deep links once late content and media have settled.
+  if (window.location.hash) {
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (target) {
+      const alignTarget = () => target.scrollIntoView({ block: 'start' });
+      window.addEventListener('load', () => {
+        alignTarget();
+        window.setTimeout(alignTarget, 500);
+        window.setTimeout(alignTarget, 1500);
+      }, { once: true });
+    }
+  }
+
   const readerPage = document.querySelector('.reader-shell');
   if (!readerPage) return;
 
