@@ -55,3 +55,6 @@
   .contact-section .form-submit{grid-template-columns:1fr}
   .contact-section .form-submit button{width:100%}
 }
+
+.captcha-wrap{min-height:76px;padding:12px 14px;border:1px solid #d8d8de;border-radius:14px;background:#f7f7f9}
+.captcha-wrap:before{display:block;margin-bottom:9px;color:#6e6e73;font-size:8px;font-weight:720;letter-spacing:.08em;content:"ANTI-SPAM VERIFICATION"}

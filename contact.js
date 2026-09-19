@@ -2,10 +2,31 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.contact-form').forEach(form => {
     const submit = form.querySelector('button[type="submit"]');
     const status = form.querySelector('.form-status');
+    const cooldownKey = 'laneform-contact-last-sent';
+    const cooldownMs = 60000;
+
+    const remainingCooldown = () => {
+      const lastSent = Number(window.localStorage.getItem(cooldownKey) || 0);
+      return Math.max(0, cooldownMs - (Date.now() - lastSent));
+    };
 
     form.addEventListener('submit', async event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
+
+      const captcha = form.querySelector('textarea[name="h-captcha-response"]');
+      if (!captcha || !captcha.value) {
+        status.className = 'form-status is-error';
+        status.textContent = 'Please complete the anti-spam check before sending.';
+        return;
+      }
+
+      const waitMs = remainingCooldown();
+      if (waitMs > 0) {
+        status.className = 'form-status is-error';
+        status.textContent = `Please wait ${Math.ceil(waitMs / 1000)} seconds before sending another enquiry.`;
+        return;
+      }
 
       const originalLabel = submit.innerHTML;
       submit.disabled = true;
@@ -32,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         form.reset();
+        window.localStorage.setItem(cooldownKey, String(Date.now()));
+        if (window.hcaptcha) window.hcaptcha.reset();
         status.className = 'form-status is-success';
         status.textContent = 'Thank you. Your enquiry has been sent to Zhang Weibin.';
       } catch (error) {

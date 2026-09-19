@@ -6,7 +6,7 @@
   <meta name="description" content="Research questions, system architecture, methods, evidence, model and dataset documentation for a Raspberry Pi lane-following comparison.">
   <title>Research Guide · LANEFORM</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b1620'/%3E%3Cpath d='M17 51 25 13M47 51 39 13' stroke='%23d8f667' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M32 51V36c0-6 6-8 6-14v-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./style.css?v=5">
+  <link rel="stylesheet" href="./style.css?v=6">
   <link rel="stylesheet" href="./research.css?v=4">
 </head>
 <body>
@@ -120,6 +120,7 @@
           <div class="form-field"><label for="contact-affiliation-research">Affiliation <span>Optional</span></label><input id="contact-affiliation-research" name="affiliation" type="text" autocomplete="organization" placeholder="University or organisation"></div>
           <div class="form-field"><label for="contact-topic-research">Topic</label><select id="contact-topic-research" name="topic"><option>Research methods</option><option>Experiment data</option><option>Source code and deployment</option><option>Academic collaboration</option><option>Other enquiry</option></select></div>
           <div class="form-field form-wide"><label for="contact-message-research">Message <span>Required</span></label><textarea id="contact-message-research" name="message" rows="6" required placeholder="How can I help?"></textarea></div>
+          <div class="captcha-wrap form-wide"><div class="h-captcha" data-captcha="true"></div></div>
           <label class="form-consent form-wide"><input type="checkbox" name="contact_permission" value="Agreed" required><span>I agree to provide these details so the researcher can reply to this enquiry.</span></label>
           <div class="form-submit form-wide"><button type="submit"><span>Send online enquiry</span><i aria-hidden="true">↗</i></button><p>Your details are used only to deliver this research enquiry. Replies will be sent to the email you enter above.</p></div>
           <p class="form-status form-wide" role="status" aria-live="polite"></p>
@@ -129,7 +130,8 @@
 
   <footer><div><span class="footer-brand">LANEFORM</span><p>Research methods, evidence and reproducibility</p></div><div><a href="./index.html#results">Results</a><a href="./deployment.html">Setup guide</a><a href="#contact">Contact</a><a href="#research">Back to top ↑</a></div></footer>
   <script src="./research.js"></script>
-  <script src="./contact.js?v=7"></script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="./contact.js?v=8"></script>
   <script src="./site-shell.js?v=6"></script>
 </body>
 </html>
