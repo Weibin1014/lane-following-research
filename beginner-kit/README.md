@@ -1,6 +1,6 @@
 # Beginner Setup Kit
 
-This package accompanies the Lane / Lab research website. It takes a new user from a fresh Raspberry Pi OS SD card to a camera-only test and, only after manual checks, to the archived 16-second lane-following runner.
+This package accompanies the LANEFORM research website. It takes a new user from a fresh Raspberry Pi OS SD card to a camera-only test and, only after manual checks, to the archived 16-second lane-following runner.
 
 ## Start here
 

@@ -26,4 +26,4 @@ Full thesis documents, device backup archives, original MOV videos, presentation
 
 ## Contact
 
-Research and implementation questions may be sent to Zhang Weibin at [mark608041@gmail.com](mailto:mark608041@gmail.com).
+Research and implementation questions can be sent through the [online contact form](https://weibin1014.github.io/lane-following-research/#contact). Visitors provide a reply email with their enquiry.

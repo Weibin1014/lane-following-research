@@ -119,7 +119,7 @@ async function load() {
     if (!item) throw new Error('This file is not in the research index.');
     const details = archive.describeFile(item);
     titleNode.textContent = details.title;
-    document.title = `${details.title} · Lane / Lab`;
+    document.title = `${details.title} · LANEFORM`;
     pathNode.textContent = item.path;
     rawLink.href = archive.sourceUrl(item.path);
     rawLink.download = item.path.split('/').at(-1);
@@ -146,7 +146,7 @@ async function load() {
           const englishHeading = englishText.match(/^#\s+(.+)$/m)?.[1];
           if (englishHeading) {
             titleNode.textContent = englishHeading;
-            document.title = `${englishHeading} · Lane / Lab`;
+            document.title = `${englishHeading} · LANEFORM`;
           }
           const controls = document.querySelector('#language-switch');
           controls.hidden = false;

@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const readerPage = document.querySelector('.reader-shell');
   if (!readerPage) return;
 
-  const mail = document.createElement('a');
-  mail.className = 'contact-float';
-  mail.href = 'mailto:mark608041@gmail.com?subject=Lane%20Following%20Research%20Enquiry';
-  mail.setAttribute('aria-label', 'Email Zhang Weibin about the lane-following research');
-  mail.innerHTML = '<span>Research contact</span><b>↗</b>';
-  document.body.appendChild(mail);
+  const contact = document.createElement('a');
+  contact.className = 'contact-float';
+  contact.href = './index.html#contact';
+  contact.setAttribute('aria-label', 'Open the online research contact form');
+  contact.innerHTML = '<span>Online contact</span><b>↗</b>';
+  document.body.appendChild(contact);
 
   const contactZones = document.querySelectorAll('#contact, .research-contact, footer');
   if ('IntersectionObserver' in window && contactZones.length) {
