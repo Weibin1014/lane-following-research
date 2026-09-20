@@ -33,11 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav.setAttribute('aria-label', 'Mobile navigation');
     mobileNav.innerHTML = desktopNav.innerHTML;
     mobileNav.hidden = true;
+    mobileNav.setAttribute('aria-hidden', 'true');
     siteHeader.append(menuButton, mobileNav);
 
     const setMenu = open => {
       menuButton.setAttribute('aria-expanded', String(open));
       mobileNav.hidden = !open;
+      mobileNav.setAttribute('aria-hidden', String(!open));
+      mobileNav.classList.toggle('is-open', open);
       document.body.classList.toggle('mobile-nav-open', open);
     };
     menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
