@@ -58,3 +58,48 @@
 
 .captcha-wrap{min-height:76px;padding:12px 14px;border:1px solid #d8d8de;border-radius:14px;background:#f7f7f9}
 .captcha-wrap:before{display:block;margin-bottom:9px;color:#6e6e73;font-size:8px;font-weight:720;letter-spacing:.08em;content:"ANTI-SPAM VERIFICATION"}
+
+/* Clear page hierarchy and responsive navigation. */
+.page-context-bar{position:sticky;top:58px;z-index:72;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:47px;padding:0 5%;border-bottom:1px solid #0000000b;background:#f5f5f7e8;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+.breadcrumbs{display:flex;align-items:center;gap:9px;min-width:0;margin:0;color:#86868b;font-size:11px;font-weight:560;white-space:nowrap;overflow:hidden}
+.breadcrumbs a{flex:none;color:#3a3a3c;font-size:11px}
+.breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.breadcrumbs span[aria-current="page"]{min-width:0;overflow:hidden;text-overflow:ellipsis;color:#6e6e73}
+.back-level{display:inline-flex;align-items:center;gap:8px;flex:none;padding:7px 12px;border:1px solid #d2d2d7;border-radius:999px;background:#fff;color:#1d1d1f;font-size:10px;font-weight:680;box-shadow:0 2px 8px #00000008;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.back-level:hover{transform:translateX(-2px);border-color:#a9a9ae;box-shadow:0 5px 16px #00000010}
+.mobile-nav-toggle,.mobile-nav-panel{display:none}
+.site-header>nav a[aria-current="location"]{color:#1d1d1f}
+.site-header>nav a[aria-current="location"]:after{display:block;width:100%;height:2px;margin-top:5px;border-radius:2px;background:#9dbe35;content:""}
+@media(max-width:900px){
+  .site-header{position:sticky}
+  .mobile-nav-toggle{display:inline-flex;align-items:center;gap:9px;margin-left:auto;padding:8px 12px;border:1px solid #d2d2d7;border-radius:999px;background:#fff;color:#1d1d1f;font-size:10px;font-weight:700;cursor:pointer}
+  .mobile-nav-toggle i,.mobile-nav-toggle i:before,.mobile-nav-toggle i:after{display:block;width:12px;height:1.5px;border-radius:2px;background:#1d1d1f;content:"";transition:transform .18s ease,opacity .18s ease}
+  .mobile-nav-toggle i{position:relative}
+  .mobile-nav-toggle i:before{position:absolute;top:-4px}
+  .mobile-nav-toggle i:after{position:absolute;top:4px}
+  .mobile-nav-toggle[aria-expanded="true"] i{background:transparent}
+  .mobile-nav-toggle[aria-expanded="true"] i:before{top:0;transform:rotate(45deg)}
+  .mobile-nav-toggle[aria-expanded="true"] i:after{top:0;transform:rotate(-45deg)}
+  .site-header .mobile-nav-panel{position:absolute;top:calc(100% + 8px);left:4%;right:4%;display:grid;gap:0;margin:0;padding:10px;border:1px solid #0000000d;border-radius:20px;background:#fbfbfdeF;box-shadow:0 22px 60px #0003;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+  .site-header .mobile-nav-panel[hidden]{display:none}
+  .site-header .mobile-nav-panel a{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:11px;color:#1d1d1f;font-size:13px;font-weight:620}
+  .site-header .mobile-nav-panel a:after{content:"→";color:#8e8e93}
+  .site-header .mobile-nav-panel a:hover{background:#f0f0f3}
+  .site-header .mobile-nav-panel a[aria-current="location"]{background:#edf3db;color:#1d1d1f}
+  .site-header .mobile-nav-panel a[aria-current="location"]:after{display:block;width:auto;height:auto;margin:0;background:none;content:"•";color:#78951e;font-size:17px}
+  .mobile-nav-open:after{position:fixed;z-index:68;inset:0;background:#0003;content:""}
+}
+@media(max-width:760px){
+  .site-header{min-height:62px;flex-wrap:nowrap}
+  .site-header>.header-action{display:none}
+  .page-context-bar{top:62px;min-height:44px;padding:0 5%;gap:12px}
+  .breadcrumbs{gap:7px;font-size:10px}
+  .breadcrumbs a{font-size:10px}
+  .back-level{padding:7px 10px}
+  .back-level span+*{display:none}
+}
+@media(max-width:430px){
+  .brand-wordmark small{display:none}
+  .breadcrumbs a:first-child,.breadcrumbs a:first-child+span{display:none}
+}
+@media(prefers-reduced-motion:reduce){.back-level,.mobile-nav-toggle i,.mobile-nav-toggle i:before,.mobile-nav-toggle i:after{transition:none}}
